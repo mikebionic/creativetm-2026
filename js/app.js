@@ -2,17 +2,17 @@
 const team = [
   {
     id: "selbi",
-    name: "Selbi",
-    role: "Creative",
+    name: "Selbinyyaz Nurmammedova",
+    role: "Choreographer & Dance Instructor",
     org: "",
     location: "Turkmenistan",
-    avatar: "",
+    avatar: "images/selbi-avatar.jpg",
     color: "#E91E63",
-    bio: "Creative content maker and storyteller, Selbi brings fresh perspectives to digital media through engaging short-form content and creative collaborations.",
-    skills: ["Content Creation", "TikTok", "Creative Direction", "Storytelling"],
-    social: { tiktok: "#" },
+    bio: "Choreographer and Dance Instructor specializing in cultural fusion within contemporary high heels.",
+    skills: ["Choreography", "Dance Instruction", "Cultural Fusion", "Contemporary Dance", "High Heels"],
+    social: { tiktok: "#", email: "selbi.nrm@gmail.com" },
     projects: [
-      { name: "Creative Content", desc: "Short-form video content and creative storytelling across platforms" }
+      { name: "Cultural Fusion Dance", desc: "Blending traditional cultural elements with contemporary high heels dance" }
     ]
   },
   {
@@ -32,15 +32,15 @@ const team = [
   },
   {
     id: "myahri-gylyjova",
-    name: "Myahri Gylyjova",
+    name: "Myahri Klycheva",
     role: "TechWomen Alumna / Digital Skills Trainer",
     org: "TechWomen",
     location: "Turkmenistan",
     avatar: "",
     color: "#2196F3",
-    bio: "Myahri Gylyjova is a TechWomen alumna dedicated to expanding digital literacy and skills training in Turkmenistan. She empowers the next generation through technology education and mentorship programs.",
-    skills: ["Digital Education", "Tech Training", "Mentorship", "Community Building", "TechWomen"],
-    social: {},
+    bio: "TechWomen 2022 alumna and certified digital skills trainer. Myahri teaches robotics and Scratch programming, empowering the next generation through technology education in Turkmenistan.",
+    skills: ["Digital Skills Training", "Robotics", "Scratch Programming", "TechWomen", "Teaching"],
+    social: { instagram: "https://instagram.com/myauklycheva" },
     projects: [
       { name: "Digital Skills Training", desc: "Workshops and programs to build digital literacy across Turkmenistan" },
       { name: "TechWomen Fellowship", desc: "Mentorship and professional development through the TechWomen program" }
@@ -52,13 +52,14 @@ const team = [
     role: "Filmmaker / 3D Artist / AI Creator",
     org: "Studio22",
     location: "Turkmenistan",
-    avatar: "",
+    avatar: "images/kemal-avatar.jpg",
     color: "#FF5722",
     bio: "Kemal Babayev is a multidisciplinary creator at Studio22, working across filmmaking, 3D visualization, and AI-generated art. His work pushes the boundaries of visual storytelling in Central Asia.",
     skills: ["Filmmaking", "3D Art", "AI Art", "Visual Effects", "Creative Direction"],
     social: {
       instagram: "https://instagram.com/ai_kema",
-      instagram2: "https://instagram.com/studio22_tm"
+      instagram2: "https://instagram.com/studio22_tm",
+      email: "kemal.babayew@gmail.com"
     },
     projects: [
       { name: "Studio22", desc: "Creative studio for film production, 3D visualization, and digital art" },
@@ -68,32 +69,120 @@ const team = [
   {
     id: "batyr-rejepov",
     name: "Batyr Rejepov",
-    role: "AI Specialist",
+    role: "AI Marketing Expert",
     org: "",
     location: "Turkmenistan",
-    avatar: "",
+    avatar: "images/batyr-avatar.jpg",
     color: "#00BCD4",
-    bio: "Batyr Rejepov specializes in artificial intelligence applications for creative industries. He explores how AI can augment human creativity and open new frontiers in digital art and media.",
-    skills: ["Artificial Intelligence", "Machine Learning", "AI Art", "Digital Innovation"],
-    social: { instagram: "https://instagram.com/b.rejepov_ai" },
+    bio: "First AI marketer in Turkmenistan. Batyr Rejepov integrates AI into marketing and sales, specializing in digital marketing, AI-powered solutions, and Instagram chatbots for businesses.",
+    skills: ["AI Marketing", "Digital Marketing", "Chatbots", "AI Solutions", "Sales Automation"],
+    social: { instagram: "https://instagram.com/b.rejepov_ai", email: "Rejepov.bat@gmail.com" },
     projects: [
       { name: "AI Creative Tools", desc: "Developing and applying AI tools for creative production and art generation" }
     ]
   },
   {
     id: "vasiliy",
-    name: "Vasiliy",
+    name: "Vasiliy Andronov",
     role: "Creative Agency Founder",
     org: "Jam Creative Agency",
     location: "Turkmenistan",
     avatar: "images/vasiliy-avatar.jpg",
     color: "#4CAF50",
-    bio: "Vasiliy is the founder of Jam Creative Agency, delivering branding, design, and creative strategy for clients across Turkmenistan and Central Asia.",
+    bio: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering branding, design, and creative strategy for clients across Turkmenistan and Central Asia.",
     skills: ["Branding", "Creative Strategy", "Design", "Agency Management", "Marketing"],
     social: { instagram: "https://instagram.com/jam_tm_creative" },
     projects: [
       { name: "Jam Creative Agency", desc: "Full-service creative agency specializing in branding, design, and marketing strategy" }
     ]
+  },
+  {
+    id: "abdy-agajykov",
+    name: "Abdyrahym Agajykov",
+    role: "Marketing & Entrepreneurship",
+    org: "Nexvoke Agency",
+    location: "Turkmenistan",
+    avatar: "images/abdy-avatar.jpg",
+    color: "#FF9800",
+    bio: "I create to influence and motivate people. Abdyrahym Agajykov is a marketing professional and entrepreneur, running Nexvoke Agency and Creative Corner TM. He combines marketing strategy, consulting, and a passion for books.",
+    skills: ["Marketing", "Entrepreneurship", "Consulting", "Books", "Creative Strategy"],
+    social: {
+      instagram: "https://instagram.com/abdy.agajyk",
+      instagram2: "https://instagram.com/nexvoke.agency"
+    },
+    projects: [
+      { name: "Nexvoke Agency", desc: "Marketing and creative agency" },
+      { name: "Creative Corner TM", desc: "Creative community platform" },
+      { name: "Astra Consulting TM", desc: "Business consulting services" }
+    ]
+  },
+  {
+    id: "aman-sapargeldiyev",
+    name: "Aman Sapargeldiyev",
+    role: "Filmmaker",
+    org: "",
+    location: "Turkmenistan",
+    avatar: "images/aman-avatar.jpg",
+    color: "#607D8B",
+    bio: "Aman Sapargeldiyev is a filmmaker from Turkmenistan, bringing fresh perspectives to visual storytelling and creative media production.",
+    skills: ["Filmmaking", "Video Production", "Visual Storytelling", "Creative Media"],
+    social: { instagram: "https://instagram.com/amansept" },
+    projects: []
+  },
+  {
+    id: "alexandra-ahmedova",
+    name: "Aleksandra Ahmedova",
+    role: "Career Consultant & Trainer",
+    org: "",
+    location: "Turkmenistan",
+    avatar: "images/alexandra-avatar.jpg",
+    color: "#E040FB",
+    bio: "Aleksandra Ahmedova is a career orientation specialist, trainer, and career consultant helping people find their professional path.",
+    skills: ["Career Consulting", "Training", "Career Orientation", "Coaching"],
+    social: {},
+    projects: []
+  },
+  {
+    id: "begench-rejepov",
+    name: "Begench Rejepov",
+    role: "Entrepreneur",
+    org: "Biar Delivery",
+    location: "Turkmenistan",
+    avatar: "images/begench-avatar.jpg",
+    color: "#795548",
+    bio: "Begench Rejepov is an entrepreneur from Turkmenistan. He is the founder of Biar Delivery and co-founder of Hinlen Music.",
+    skills: ["Entrepreneurship", "Business", "Music", "Delivery Services"],
+    social: { instagram: "https://instagram.com/mr.biar" },
+    projects: [
+      { name: "Biar Delivery", desc: "Delivery service platform" },
+      { name: "Hinlen Music", desc: "Music production and publishing" }
+    ]
+  },
+  {
+    id: "gayane-israyelyan",
+    name: "Gayane Israyelyan",
+    role: "Creative",
+    org: "",
+    location: "Turkmenistan",
+    avatar: "",
+    color: "#F44336",
+    bio: "Gayane Israyelyan is a creative professional contributing to the growing creative community in Central Asia.",
+    skills: ["Creative", "Digital Media"],
+    social: { instagram: "https://instagram.com/gayana_israyelyan" },
+    projects: []
+  },
+  {
+    id: "farhad-artykov",
+    name: "Farhad Artykov",
+    role: "Creative",
+    org: "",
+    location: "Turkmenistan",
+    avatar: "",
+    color: "#3F51B5",
+    bio: "Farhad Artykov is a creative professional from Turkmenistan, exploring innovative approaches to art and digital media.",
+    skills: ["Creative", "Digital Media"],
+    social: { instagram: "https://instagram.com/farhad_artykov" },
+    projects: []
   }
 ];
 
@@ -116,6 +205,7 @@ function socialHTML(s) {
   if (s.instagram2) icons.push(`<a href="${s.instagram2}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>`);
   if (s.tiktok) icons.push(`<a href="${s.tiktok}" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>`);
   if (s.linkedin) icons.push(`<a href="${s.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`);
+  if (s.email) icons.push(`<a href="mailto:${s.email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`);
   return icons.join("");
 }
 
