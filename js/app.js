@@ -10,24 +10,39 @@ const team = [
     color: "#E91E63",
     bio: "Choreographer and Dance Instructor specializing in cultural fusion within contemporary high heels.",
     skills: ["Choreography", "Dance Instruction", "Cultural Fusion", "Contemporary Dance", "High Heels"],
-    social: { tiktok: "#", email: "selbi.nrm@gmail.com" },
+    social: { instagram: "https://www.instagram.com/indaheels", tiktok: "#", email: "selbi.nrm@gmail.com" },
     projects: [
-      { name: "Cultural Fusion Dance", desc: "Blending traditional cultural elements with contemporary high heels dance" }
+      { name: "Cultural Fusion Dance", desc: "Blending traditional cultural elements with contemporary high heels dance" },
+      { name: "INDAHEELS", desc: "Online store for professional High Heels footwear, kneepads, and dancewear in Ashgabat", url: "https://www.instagram.com/indaheels" }
     ]
   },
   {
     id: "katalina-midyan",
     name: "Katalina Midyan",
-    role: "Creative",
-    org: "",
+    role: "Digital Illustrator & Merch Designer",
+    org: "Kate Made",
     location: "Turkmenistan",
     avatar: "images/katalina-avatar.jpg",
     color: "#9C27B0",
-    bio: "Katalina Midyan is a creative visionary blending art, fashion, and digital media. Her work explores the intersection of Central Asian culture and modern creative expression.",
-    skills: ["Creative Direction", "Photography", "TikTok", "Fashion", "Digital Media"],
-    social: { tiktok: "#" },
+    bio: "Kate Made is a project by digital artist Katalina Midyan, creating prints for modern women. Her signature style is fashion illustration infused with national motifs. At the heart of her work is the feminine image — sensual, contemporary, with an invisible connection to nature and tradition. Katalina is drawn to ethnoculture: she weaves small ornaments, symbols, and textures into her drawings, preserving their beauty while reimagining them in a fresh way.",
+    skills: ["Digital Illustration", "Fashion Illustration", "Ethno Design", "Merch Design", "National Motifs"],
+    social: {
+      instagram: "https://instagram.com/katemade.tm",
+      instagram2: "https://instagram.com/katalina_midyan"
+    },
+    portfolio: [
+      "images/portfolio/katalina/1.jpg",
+      "images/portfolio/katalina/2.jpg",
+      "images/portfolio/katalina/3.jpg",
+      "images/portfolio/katalina/4.jpg",
+      "images/portfolio/katalina/5.jpg",
+      "images/portfolio/katalina/6.jpg",
+      "images/portfolio/katalina/7.jpg",
+      "images/portfolio/katalina/8.jpg",
+      "images/portfolio/katalina/9.jpg"
+    ],
     projects: [
-      { name: "Digital Creative Works", desc: "Photography, video content, and creative visual storytelling" }
+      { name: "Kate Made", desc: "Author merch in national style — t-shirts, phone cases, mugs, thermos bottles, notebooks, shoppers, and passport covers. Each item is a small carrier of a big image, created with love for detail." }
     ]
   },
   {
@@ -69,16 +84,23 @@ const team = [
   {
     id: "batyr-rejepov",
     name: "Batyr Rejepov",
-    role: "AI Marketing Expert",
-    org: "",
+    role: "AI & Digital Marketing Expert",
+    org: "Clever Marketing / Imdatbot",
     location: "Turkmenistan",
     avatar: "images/batyr-avatar.jpg",
     color: "#00BCD4",
-    bio: "First AI marketer in Turkmenistan. Batyr Rejepov integrates AI into marketing and sales, specializing in digital marketing, AI-powered solutions, and Instagram chatbots for businesses.",
-    skills: ["AI Marketing", "Digital Marketing", "Chatbots", "AI Solutions", "Sales Automation"],
-    social: { instagram: "https://instagram.com/b.rejepov_ai", email: "Rejepov.bat@gmail.com" },
+    bio: "Batyr Rejepov leads AI integration projects and digital marketing, heading the Imdatbot robotics and programming education center while running AI consulting at Clever Marketing. He built an AI chatbot for Instagram that cut response time from 4 hours to 1 minute, created automated sales funnels with AI-cloned voice avatars, and helped Imdatbot become Turkmenistan's first ISO 9001-certified educational institution. As a USAID digital marketing expert he guided 10 startups in building market strategies. A Google-certified specialist and one of the first to use Google Ads in Turkmenistan, he has worked in digital since 2013. He holds a Bachelor's in Management from RGGMU (Saint Petersburg) and co-founded belle.com.tm — an online beauty booking platform. His focus is on low-code AI solutions that help businesses automate without unnecessary complexity.",
+    skills: ["AI Marketing", "Digital Marketing", "AI Chatbots", "Sales Automation", "Robotics Education", "Low-Code AI", "Google Ads"],
+    social: {
+      instagram: "https://instagram.com/b.rejepov_ai",
+      instagram2: "https://instagram.com/imdatbot",
+      email: "Rejepov.bat@gmail.com"
+    },
     projects: [
-      { name: "AI Creative Tools", desc: "Developing and applying AI tools for creative production and art generation" }
+      { name: "Clever Marketing", desc: "AI consulting company specializing in integrating artificial intelligence into business processes" },
+      { name: "Imdatbot", desc: "Robotics and programming education center — first in Turkmenistan with ISO 9001 certification" },
+      { name: "Türkmen Topragynyň Ruhy — 2026", desc: "AI-generated calendar celebrating the spirit of Turkmen land", url: "https://drive.google.com/file/d/1Tatqqu47Cl3T1j5AMzUPO2f0T4lAOrMj/view" },
+      { name: "belle.com.tm", desc: "Online platform for booking beauty services in Turkmenistan" }
     ]
   },
   {
@@ -92,6 +114,12 @@ const team = [
     bio: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering branding, design, and creative strategy for clients across Turkmenistan and Central Asia.",
     skills: ["Branding", "Creative Strategy", "Design", "Agency Management", "Marketing"],
     social: { instagram: "https://instagram.com/jam_tm_creative" },
+    portfolio: [
+      "images/portfolio/vasiliy/1.jpg",
+      "images/portfolio/vasiliy/2.jpg",
+      "images/portfolio/vasiliy/3.jpg",
+      "images/portfolio/vasiliy/4.jpg"
+    ],
     projects: [
       { name: "Jam Creative Agency", desc: "Full-service creative agency specializing in branding, design, and marketing strategy" }
     ]
@@ -133,7 +161,7 @@ const team = [
     id: "alexandra-ahmedova",
     name: "Aleksandra Ahmedova",
     role: "Career Consultant & Trainer",
-    org: "",
+    org: "Technovation",
     location: "Turkmenistan",
     avatar: "images/alexandra-avatar.jpg",
     color: "#E040FB",
@@ -164,7 +192,7 @@ const team = [
     role: "Creative",
     org: "",
     location: "Turkmenistan",
-    avatar: "",
+    avatar: "images/gayane-avatar.jpg",
     color: "#F44336",
     bio: "Gayane Israyelyan is a creative professional contributing to the growing creative community in Central Asia.",
     skills: ["Creative", "Digital Media"],
@@ -209,6 +237,15 @@ function socialHTML(s) {
   return icons.join("");
 }
 
+function linkIcon(url) {
+  if (url.includes("instagram.com")) return '<i class="fab fa-instagram"></i>';
+  if (url.includes("drive.google.com")) return '<i class="fab fa-google-drive"></i>';
+  if (url.includes("tiktok.com")) return '<i class="fab fa-tiktok"></i>';
+  if (url.includes("youtube.com") || url.includes("youtu.be")) return '<i class="fab fa-youtube"></i>';
+  if (url.includes("t.me") || url.includes("telegram")) return '<i class="fab fa-telegram"></i>';
+  return '<i class="fas fa-external-link-alt"></i>';
+}
+
 function skillsHTML(skills) {
   return skills.map(s => `<span class="tag">${s}</span>`).join("");
 }
@@ -246,12 +283,22 @@ function openModal(id) {
     <div class="modal-body">
       <p>${m.bio}</p>
       <div class="modal-skills">${skillsHTML(m.skills)}</div>
+      ${m.portfolio && m.portfolio.length ? `
+        <h3>Portfolio</h3>
+        <div class="portfolio-grid">
+          ${m.portfolio.map((img, i) => `
+            <div class="portfolio-item" onclick="openLightbox('${m.id}', ${i})">
+              <img src="${img}" alt="${m.name} work ${i + 1}" loading="lazy">
+            </div>
+          `).join("")}
+        </div>
+      ` : ""}
       ${m.projects.length ? `
         <h3>Projects</h3>
         <div class="projects">
           ${m.projects.map(p => `
             <div class="project" style="border-left-color:${m.color}">
-              <strong>${p.name}</strong>
+              <strong>${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${linkIcon(p.url)} ${p.name}</a>` : p.name}</strong>
               <p>${p.desc}</p>
             </div>
           `).join("")}
@@ -270,7 +317,47 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+// --- Lightbox ---
+let _lbImages = [];
+let _lbIndex = 0;
+
+function openLightbox(memberId, index) {
+  event.stopPropagation();
+  const m = team.find(t => t.id === memberId);
+  if (!m || !m.portfolio) return;
+  _lbImages = m.portfolio;
+  _lbIndex = index;
+  updateLightbox();
+  document.getElementById("lightbox").classList.add("open");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+}
+
+function lightboxNav(dir) {
+  _lbIndex = (_lbIndex + dir + _lbImages.length) % _lbImages.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  document.getElementById("lightbox-img").src = _lbImages[_lbIndex];
+  document.getElementById("lightbox-counter").textContent = `${_lbIndex + 1} / ${_lbImages.length}`;
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    if (document.getElementById("lightbox").classList.contains("open")) {
+      closeLightbox();
+    } else {
+      closeModal();
+    }
+  }
+  if (document.getElementById("lightbox").classList.contains("open")) {
+    if (e.key === "ArrowLeft") lightboxNav(-1);
+    if (e.key === "ArrowRight") lightboxNav(1);
+  }
+});
 
 // --- Theme ---
 function toggleTheme() {
@@ -288,10 +375,12 @@ function toggleTheme() {
   if (icon) icon.className = saved === "dark" ? "fas fa-moon" : "fas fa-sun";
 })();
 
-// --- Navbar scroll effect ---
+// --- Navbar scroll effect + hero pattern parallax ---
+const _patternLayer = document.querySelector(".hero-pattern-layer");
 window.addEventListener("scroll", () => {
   document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
-});
+  if (_patternLayer) _patternLayer.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+}, { passive: true });
 
 // --- Smooth scroll ---
 document.querySelectorAll('a[href^="#"]').forEach(a => {
