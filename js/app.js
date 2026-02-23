@@ -251,14 +251,15 @@ function skillsHTML(skills) {
 }
 
 function renderCards() {
+  const lang = getLang();
   const grid = document.getElementById("team-grid");
   grid.innerHTML = team.map(m => `
     <div class="card" onclick="openModal('${m.id}')">
       ${avatarHTML(m)}
       <h3>${m.name}</h3>
-      <p class="card-role">${m.role}</p>
+      <p class="card-role">${t(m.id, "role", lang)}</p>
       ${m.org ? `<p class="card-org">${m.org}</p>` : ""}
-      <div class="card-skills">${skillsHTML(m.skills.slice(0, 3))}</div>
+      <div class="card-skills">${skillsHTML(t(m.id, "skills", lang).slice(0, 3))}</div>
       <div class="card-social">${socialHTML(m.social)}</div>
     </div>
   `).join("");
@@ -268,23 +269,27 @@ function renderCards() {
 function openModal(id) {
   const m = team.find(t => t.id === id);
   if (!m) return;
+  const lang = getLang();
+  const modal = document.getElementById("member-modal");
+  modal.dataset.memberId = id;
   const el = document.getElementById("modal-content");
+  const projects = t(m.id, "projects", lang);
   el.innerHTML = `
     <div class="modal-header" style="border-left: 4px solid ${m.color}">
       ${avatarHTML(m, 120)}
       <div class="modal-info">
         <h2>${m.name}</h2>
-        <p class="modal-role">${m.role}</p>
+        <p class="modal-role">${t(m.id, "role", lang)}</p>
         ${m.org ? `<p class="modal-org"><i class="fas fa-building"></i> ${m.org}</p>` : ""}
         <p class="modal-loc"><i class="fas fa-map-marker-alt"></i> ${m.location}</p>
         <div class="modal-social">${socialHTML(m.social)}</div>
       </div>
     </div>
     <div class="modal-body">
-      <p>${m.bio}</p>
-      <div class="modal-skills">${skillsHTML(m.skills)}</div>
+      <p>${t(m.id, "bio", lang)}</p>
+      <div class="modal-skills">${skillsHTML(t(m.id, "skills", lang))}</div>
       ${m.portfolio && m.portfolio.length ? `
-        <h3>Portfolio</h3>
+        <h3>${I18N.ui["ui.portfolio"][lang]}</h3>
         <div class="portfolio-grid">
           ${m.portfolio.map((img, i) => `
             <div class="portfolio-item" onclick="openLightbox('${m.id}', ${i})">
@@ -293,20 +298,23 @@ function openModal(id) {
           `).join("")}
         </div>
       ` : ""}
-      ${m.projects.length ? `
-        <h3>Projects</h3>
+      ${projects.length ? `
+        <h3>${I18N.ui["ui.projects"][lang]}</h3>
         <div class="projects">
-          ${m.projects.map(p => `
+          ${projects.map((p, i) => {
+            const origP = m.projects[i] || {};
+            const url = origP.url;
+            return `
             <div class="project" style="border-left-color:${m.color}">
-              <strong>${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${linkIcon(p.url)} ${p.name}</a>` : p.name}</strong>
+              <strong>${url ? `<a href="${url}" target="_blank" rel="noopener">${linkIcon(url)} ${p.name}</a>` : p.name}</strong>
               <p>${p.desc}</p>
-            </div>
-          `).join("")}
+            </div>`;
+          }).join("")}
         </div>
       ` : ""}
     </div>
   `;
-  document.getElementById("member-modal").classList.add("open");
+  modal.classList.add("open");
   document.getElementById("modal-backdrop").classList.add("open");
   document.body.style.overflow = "hidden";
 }
@@ -392,5 +400,70 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// --- Init ---
-renderCards();
+// --- Language ---
+function getLang() {
+  return document.documentElement.lang || "en";
+}
+
+function t(memberId, field, lang) {
+  const entry = I18N.team[memberId];
+  if (entry && entry[field]) {
+    const val = entry[field][lang];
+    if (val !== undefined) return val;
+    return entry[field].en;
+  }
+  const m = team.find(x => x.id === memberId);
+  return m ? m[field] : "";
+}
+
+function applyStaticTranslations(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const entry = I18N.ui[key];
+    if (entry) el.textContent = entry[lang] || entry.en;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const key = el.getAttribute("data-i18n-html");
+    const entry = I18N.ui[key];
+    if (entry) el.innerHTML = entry[lang] || entry.en;
+  });
+}
+
+function applyTranslations(lang) {
+  applyStaticTranslations(lang);
+  renderCards();
+  document.title = (I18N.ui["page.title"][lang] || I18N.ui["page.title"].en);
+  // Re-render open modal
+  const modal = document.getElementById("member-modal");
+  if (modal.classList.contains("open") && modal.dataset.memberId) {
+    openModal(modal.dataset.memberId);
+  }
+}
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem("lang", lang);
+  const label = document.querySelector(".lang-label");
+  if (label) label.textContent = lang === "en" ? "RU" : "EN";
+  applyTranslations(lang);
+}
+
+function toggleLang() {
+  setLang(getLang() === "en" ? "ru" : "en");
+}
+
+(function initLang() {
+  const saved = localStorage.getItem("lang");
+  let lang;
+  if (saved) {
+    lang = saved;
+  } else if ((navigator.language || "").startsWith("ru")) {
+    lang = "ru";
+  } else {
+    lang = "en";
+  }
+  document.documentElement.lang = lang;
+  const label = document.querySelector(".lang-label");
+  if (label) label.textContent = lang === "en" ? "RU" : "EN";
+  applyTranslations(lang);
+})();

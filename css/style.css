@@ -52,9 +52,10 @@ img { max-width: 100%; display: block; }
 .nav-links a:hover { color: var(--accent); }
 .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; }
 .navbar.scrolled .nav-toggle { color: var(--text); }
-.theme-toggle { background: none; border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.85); border-radius: 50%; width: 36px; height: 36px; cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; }
-.navbar.scrolled .theme-toggle { border-color: var(--border); color: var(--text2); }
-.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle, .lang-toggle { background: none; border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.85); border-radius: 50%; width: 36px; height: 36px; cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; }
+.lang-toggle { font-weight: 700; font-size: .75rem; font-family: inherit; }
+.navbar.scrolled .theme-toggle, .navbar.scrolled .lang-toggle { border-color: var(--border); color: var(--text2); }
+.theme-toggle:hover, .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
 /* === Hero === */
 .hero {
@@ -237,7 +238,7 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-links a { color: var(--text); }
-  .theme-toggle { color: var(--text); border-color: var(--border); }
+  .theme-toggle, .lang-toggle { color: var(--text); border-color: var(--border); }
   .team-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .modal-header { flex-direction: column; text-align: center; }
