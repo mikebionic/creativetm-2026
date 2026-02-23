@@ -149,17 +149,17 @@ const I18N = {
       projects: { en: [], ru: [] }
     },
     "begench-rejepov": {
-      role:     { en: "Entrepreneur", ru: "Предприниматель" },
-      bio:      { en: "Begench Rejepov is an entrepreneur from Turkmenistan. He is the founder of Biar Delivery and co-founder of Hinlen Music.", ru: "Бегенч Реджепов — предприниматель из Туркменистана. Основатель Biar Delivery и сооснователь Hinlen Music." },
-      skills:   { en: ["Entrepreneurship", "Business", "Music", "Delivery Services"], ru: ["Предпринимательство", "Бизнес", "Музыка", "Служба доставки"] },
+      role:     { en: "Startup Founder", ru: "Основатель стартапов" },
+      bio:      { en: "Begench Rejepov is a startup founder from Turkmenistan who attracted the country's first venture capital investment. His food delivery service Biar has completed 1 incubation and 2 acceleration programs, placed 3rd at the international Hi-Tech Forum in Ashgabat, 2nd at \"Sanly çözgüt 2024\", and reached the top 10 Central Asian startups at Startup Battle in Tashkent. His second project, Hinlen, is a music streaming platform focused on Central Asia, supporting local artists with online and offline listening via premium subscription — backed by IT Park Uzbekistan.", ru: "Бегенч Реджепов — основатель двух стартапов из Туркменистана, привлёкший первые венчурные инвестиции в стране. Сервис доставки еды Biar прошёл 1 инкубационную и 2 акселерационные программы, занял 3-е место на международном Hi-Tech форуме в Ашхабаде, 2-е место на «Sanly çözgüt 2024» и вошёл в топ-10 стартапов ЦА на Startup Battle в Ташкенте. Второй проект — Hinlen — музыкальная стриминговая платформа для Центральной Азии, поддерживающая локальных артистов с онлайн- и офлайн-прослушиванием через премиум-подписку. Привлёк инвестиции от IT Park Uzbekistan." },
+      skills:   { en: ["Startups", "Venture Capital", "Food Delivery", "Music Streaming", "Product Development"], ru: ["Стартапы", "Венчурный капитал", "Доставка еды", "Музыкальный стриминг", "Разработка продуктов"] },
       projects: {
         en: [
-          { name: "Biar Delivery", desc: "Delivery service platform" },
-          { name: "Hinlen Music", desc: "Music production and publishing" }
+          { name: "Biar Delivery", desc: "Food delivery service helping cafes get orders and new customers. First venture-funded startup in Turkmenistan. Top-10 at Startup Battle Tashkent." },
+          { name: "Hinlen", desc: "Music streaming platform for Central Asia — supporting local artists with online & offline premium listening. Backed by IT Park Uzbekistan." }
         ],
         ru: [
-          { name: "Biar Delivery", desc: "Платформа службы доставки" },
-          { name: "Hinlen Music", desc: "Музыкальное производство и издательство" }
+          { name: "Biar Delivery", desc: "Сервис доставки еды, помогающий кафе получать заказы и новых клиентов. Первый стартап в Туркменистане с венчурными инвестициями. Топ-10 на Startup Battle в Ташкенте." },
+          { name: "Hinlen", desc: "Музыкальная стриминговая платформа для ЦА — поддержка локальных артистов с онлайн- и офлайн-прослушиванием по премиум-подписке. Инвестиции от IT Park Uzbekistan." }
         ]
       }
     },

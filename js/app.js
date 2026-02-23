@@ -173,17 +173,17 @@ const team = [
   {
     id: "begench-rejepov",
     name: "Begench Rejepov",
-    role: "Entrepreneur",
-    org: "Biar Delivery",
+    role: "Startup Founder",
+    org: "Biar Delivery / Hinlen",
     location: "Turkmenistan",
     avatar: "images/begench-avatar.jpg",
     color: "#795548",
-    bio: "Begench Rejepov is an entrepreneur from Turkmenistan. He is the founder of Biar Delivery and co-founder of Hinlen Music.",
-    skills: ["Entrepreneurship", "Business", "Music", "Delivery Services"],
+    bio: "Begench Rejepov is a startup founder from Turkmenistan who attracted the country's first venture capital investment. His food delivery service Biar has completed 1 incubation and 2 acceleration programs, placed 3rd at the international Hi-Tech Forum in Ashgabat, 2nd at \"Sanly çözgüt 2024\", and reached the top 10 Central Asian startups at Startup Battle in Tashkent. His second project, Hinlen, is a music streaming platform focused on Central Asia, supporting local artists with online and offline listening via premium subscription — backed by IT Park Uzbekistan.",
+    skills: ["Startups", "Venture Capital", "Food Delivery", "Music Streaming", "Product Development"],
     social: { instagram: "https://instagram.com/mr.biar" },
     projects: [
-      { name: "Biar Delivery", desc: "Delivery service platform" },
-      { name: "Hinlen Music", desc: "Music production and publishing" }
+      { name: "Biar Delivery", desc: "Food delivery service helping cafes get orders and new customers. First venture-funded startup in Turkmenistan. Top-10 at Startup Battle Tashkent.", url: "https://biar.biz/" },
+      { name: "Hinlen", desc: "Music streaming platform for Central Asia — supporting local artists with online & offline premium listening. Backed by IT Park Uzbekistan.", url: "https://hinlen.com" }
     ]
   },
   {
