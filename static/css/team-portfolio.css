@@ -63,9 +63,15 @@ header.intro-header .site-heading .subheading {
 
 .forum-banner h2 {
   color: #333;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   font-size: 2em;
   font-weight: 700;
+}
+
+.forum-organizer {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 10px;
 }
 
 .forum-location {
@@ -84,6 +90,31 @@ header.intro-header .site-heading .subheading {
   line-height: 1.7;
   max-width: 700px;
   margin: 0 auto 20px;
+}
+
+.forum-schedule-mini {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.schedule-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 133, 161, 0.06);
+  color: #555;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+.schedule-item i {
+  color: #0085a1;
+  font-size: 0.9em;
 }
 
 .forum-tags {
@@ -555,8 +586,17 @@ header.intro-header .site-heading .subheading {
   color: #e0e0e0;
 }
 
+[data-theme="dark"] .forum-organizer {
+  color: #999;
+}
+
 [data-theme="dark"] .forum-location {
   color: #aaa;
+}
+
+[data-theme="dark"] .schedule-item {
+  background: rgba(0, 133, 161, 0.12);
+  color: #bbb;
 }
 
 [data-theme="dark"] .forum-description {

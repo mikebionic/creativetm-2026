@@ -8,15 +8,15 @@ languageCode = "en-us"
 
 [params]
   SEOTitle = "Creative Turkmenistan | Creative Central Asia 2026"
-  description = "Meet the creative professionals from Turkmenistan — filmmakers, animators, AI specialists, digital educators, and agency founders — at the Creative Central Asia Forum 2026 in Tashkent, Uzbekistan."
-  keyword = "Turkmenistan, Creative Economy, CCA2026, Creative Central Asia, Uzbekistan, Tashkent, Animation, AI, Film, Digital Arts, TechWomen, Studio22, Jam Creative"
+  description = "Meet the creative professionals from Turkmenistan — filmmakers, animators, AI specialists, digital educators, and agency founders — at Creative Central Asia 2026 (British Council) in Tashkent & Samarkand, Uzbekistan. February 26 – March 2."
+  keyword = "Turkmenistan, Creative Economy, CCA2026, Creative Central Asia, British Council, Uzbekistan, Tashkent, Samarkand, Animation, AI, Film, Digital Arts, TechWomen, Studio22, Jam Creative"
   slogan = "Creativity Without Borders"
   header_image = "img/hero-bg.jpg"
   omit_categories = true
   upstreamAttribution = false
 
   # Sidebar
-  sidebar_about_description = "Turkmenistan's creative delegation at Creative Central Asia 2026 in Tashkent, Uzbekistan"
+  sidebar_about_description = "Turkmenistan's creative delegation at Creative Central Asia 2026 (British Council) — Tashkent & Samarkand, Feb 26 – Mar 2"
   sidebar_avatar = "img/tm-flag.svg"
   about_me = true
   featured_tags = true
