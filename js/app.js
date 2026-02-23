@@ -250,6 +250,166 @@ function skillsHTML(skills) {
   return skills.map(s => `<span class="tag">${s}</span>`).join("");
 }
 
+function renderHeritage() {
+  const lang = getLang();
+  const track = document.getElementById("heritage-track");
+  if (!track) return;
+  const facts = I18N.heritage.map(item => ({
+    icon: item.icon,
+    title: item.title[lang] || item.title.en,
+    text: item.text[lang] || item.text.en
+  }));
+  // Triplicate for seamless infinite loop on wide screens
+  const items = [...facts, ...facts, ...facts];
+  track.innerHTML = items.map((f, i) => `
+    <div class="tri-item ${i % 2 === 0 ? 'up' : 'down'}">
+      <i class="${f.icon}"></i>
+      <span class="tri-title">${f.title}</span>
+      <span class="tri-text">${f.text}</span>
+    </div>
+  `).join("");
+}
+
+// --- Heritage auto-scroll + drag ---
+(function initHeritageScroll() {
+  const wrap = document.querySelector(".carousel-wrap");
+  if (!wrap) return;
+  const speed = 0.6; // px per frame
+  let isDragging = false, isHovering = false, startX, scrollStart;
+  let rafId;
+
+  function autoScroll() {
+    if (!isDragging && !isHovering) {
+      wrap.scrollLeft += speed;
+      // Infinite loop: when scrolled past first third, jump back
+      const track = wrap.firstElementChild;
+      if (track && wrap.scrollLeft >= track.scrollWidth / 3) {
+        wrap.scrollLeft -= track.scrollWidth / 3;
+      }
+    }
+    rafId = requestAnimationFrame(autoScroll);
+  }
+  rafId = requestAnimationFrame(autoScroll);
+
+  // Pause on hover
+  wrap.addEventListener("mouseenter", () => { isHovering = true; });
+  wrap.addEventListener("mouseleave", () => { isHovering = false; isDragging = false; wrap.classList.remove("grabbing"); });
+
+  // Drag
+  wrap.addEventListener("mousedown", e => {
+    isDragging = true;
+    wrap.classList.add("grabbing");
+    startX = e.pageX;
+    scrollStart = wrap.scrollLeft;
+  });
+  window.addEventListener("mouseup", () => { if (isDragging) { isDragging = false; wrap.classList.remove("grabbing"); } });
+  window.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    wrap.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+
+  // Touch
+  wrap.addEventListener("touchstart", e => {
+    isHovering = true;
+    startX = e.touches[0].pageX;
+    scrollStart = wrap.scrollLeft;
+  }, { passive: true });
+  wrap.addEventListener("touchmove", e => {
+    wrap.scrollLeft = scrollStart - (e.touches[0].pageX - startX);
+  }, { passive: true });
+  wrap.addEventListener("touchend", () => { isHovering = false; });
+})();
+
+// --- Neon edge trails ---
+(function initNeonTrails() {
+  // Triangle edge vertices (fraction of width/height)
+  const UP_VERTS   = [[.5,0],[1,1],[0,1]];   // top, right, left
+  const DOWN_VERTS = [[0,0],[1,0],[.5,1]];    // left, right, bottom
+
+  // Lerp along triangle perimeter at progress t (0..1)
+  function edgePos(verts, t) {
+    const seg = t * 3;
+    const i = Math.floor(seg) % 3;
+    const f = seg - Math.floor(seg);
+    const a = verts[i], b = verts[(i + 1) % 3];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+  }
+
+  const tracers = [];
+  const configs = [
+    { nth: 5, off: 1, speed: 14, color: "26,115,232",  tailLen: 30 },
+    { nth: 5, off: 3, speed: 20, color: "233,30,99",   tailLen: 25 },
+    { nth: 7, off: 2, speed: 28, color: "26,115,232",  tailLen: 22 },
+    { nth: 7, off: 5, speed: 17, color: "233,30,99",   tailLen: 28 },
+  ];
+
+  function setup() {
+    tracers.length = 0;
+    document.querySelectorAll(".tri-item").forEach((el, idx) => {
+      configs.forEach(cfg => {
+        if (idx % cfg.nth !== cfg.off) return;
+        let canvas = el.querySelector("canvas.neon-canvas");
+        if (!canvas) {
+          canvas = document.createElement("canvas");
+          canvas.className = "neon-canvas";
+          el.appendChild(canvas);
+        }
+        const w = el.offsetWidth, h = el.offsetHeight;
+        canvas.width = w; canvas.height = h;
+        const isUp = el.classList.contains("up");
+        tracers.push({
+          canvas, ctx: canvas.getContext("2d"),
+          w, h, verts: isUp ? UP_VERTS : DOWN_VERTS,
+          speed: cfg.speed, color: cfg.color, tailLen: cfg.tailLen,
+          t: Math.random(), trail: []
+        });
+      });
+    });
+  }
+
+  function tick() {
+    tracers.forEach(tr => {
+      tr.t = (tr.t + 1 / (tr.speed * 60)) % 1;
+      const [fx, fy] = edgePos(tr.verts, tr.t);
+      const x = fx * tr.w, y = fy * tr.h;
+      tr.trail.push([x, y]);
+      if (tr.trail.length > tr.tailLen) tr.trail.shift();
+
+      tr.ctx.clearRect(0, 0, tr.w, tr.h);
+      const len = tr.trail.length;
+      for (let i = 1; i < len; i++) {
+        const alpha = (i / len) * .6;
+        const lw = (i / len) * 3;
+        tr.ctx.beginPath();
+        tr.ctx.moveTo(tr.trail[i - 1][0], tr.trail[i - 1][1]);
+        tr.ctx.lineTo(tr.trail[i][0], tr.trail[i][1]);
+        tr.ctx.strokeStyle = `rgba(${tr.color},${alpha})`;
+        tr.ctx.lineWidth = lw;
+        tr.ctx.stroke();
+      }
+      // Bright head dot
+      tr.ctx.beginPath();
+      tr.ctx.arc(x, y, 3, 0, Math.PI * 2);
+      tr.ctx.fillStyle = `rgba(${tr.color},.9)`;
+      tr.ctx.shadowColor = `rgba(${tr.color},.8)`;
+      tr.ctx.shadowBlur = 12;
+      tr.ctx.fill();
+      tr.ctx.shadowBlur = 0;
+    });
+    requestAnimationFrame(tick);
+  }
+
+  // Init after first render
+  setTimeout(() => { setup(); tick(); }, 200);
+  // Re-setup on language change (re-render)
+  const origRenderHeritage = renderHeritage;
+  renderHeritage = function() {
+    origRenderHeritage();
+    setTimeout(setup, 50);
+  };
+})();
+
 function renderCards() {
   const lang = getLang();
   const grid = document.getElementById("team-grid");
@@ -432,6 +592,7 @@ function applyStaticTranslations(lang) {
 function applyTranslations(lang) {
   applyStaticTranslations(lang);
   renderCards();
+  renderHeritage();
   document.title = (I18N.ui["page.title"][lang] || I18N.ui["page.title"].en);
   // Re-render open modal
   const modal = document.getElementById("member-modal");

@@ -22,6 +22,10 @@ const I18N = {
     "about.card3.desc":  { en: "Digital skills training and mentorship", ru: "Обучение цифровым навыкам и наставничество" },
     "about.card4.title": { en: "Creative Agency", ru: "Креативное агентство" },
     "about.card4.desc":  { en: "Branding, design, and creative strategy", ru: "Брендинг, дизайн и креативная стратегия" },
+    "nav.heritage":    { en: "Heritage", ru: "Наследие" },
+    "heritage.title":  { en: "Our Creativity Is Older Than It Seems", ru: "Наше творчество старше, чем кажется" },
+    "heritage.subtitle": { en: "Look at a Turkmen carpet \u2014 every line is a code, every color a meaning. We didn\u2019t learn design \u2014 we inherited it.", ru: "Посмотрите на туркменский ковёр \u2014 каждая линия \u2014 это код, каждый цвет \u2014 смысл. Мы не учились дизайну \u2014 мы его унаследовали." },
+    "heritage.footer": { en: "We are heirs to a culture that always valued precision, beauty, and meaning. That\u2019s exactly what the creative economy needs.", ru: "Мы \u2014 наследники культуры, которая всегда ценила точность, красоту и смысл. Именно это нужно креативной экономике." },
     "footer.text":     { en: "Creative Turkmenistan 2026 \u00b7 Creative Economy Forum \u00b7 Uzbekistan", ru: "Креативный Туркменистан 2026 \u00b7 Форум креативной экономики \u00b7 Узбекистан" },
     "ui.portfolio":    { en: "Portfolio", ru: "Портфолио" },
     "ui.projects":     { en: "Projects", ru: "Проекты" },
@@ -175,5 +179,48 @@ const I18N = {
       skills:   { en: ["Creative", "Digital Media"], ru: ["Креатив", "Цифровые медиа"] },
       projects: { en: [], ru: [] }
     }
-  }
+  },
+
+  heritage: [
+    {
+      icon: "fas fa-chess-board",
+      title: { en: "First Pixel Art", ru: "Первый пиксель-арт" },
+      text: { en: "Carpet gels encode tribal identity in strict geometry \u2014 centuries before screens existed", ru: "Ковровые гёли кодируют родовую идентичность в строгой геометрии \u2014 за века до появления экранов" }
+    },
+    {
+      icon: "fas fa-flag",
+      title: { en: "Flag with Carpets", ru: "Флаг с коврами" },
+      text: { en: "The only country with carpet patterns (5 tribal gels) on its national flag", ru: "Единственная страна с ковровыми узорами (5 родовых гёлей) на государственном флаге" }
+    },
+    {
+      icon: "fas fa-music",
+      title: { en: "Dutar Music", ru: "Музыка дутара" },
+      text: { en: "The 2-string dutar and bahshy art \u2014 UNESCO Intangible Heritage since 2021", ru: "Двухструнный дутар и искусство бахши \u2014 нематериальное наследие ЮНЕСКО с 2021 года" }
+    },
+    {
+      icon: "fas fa-horse",
+      title: { en: "Heavenly Horses", ru: "Небесные кони" },
+      text: { en: "Akhal-Teke: one of Earth\u2019s oldest breeds, national symbol \u2014 UNESCO Heritage 2024", ru: "Ахалтекинец: одна из древнейших пород мира, национальный символ \u2014 наследие ЮНЕСКО 2024" }
+    },
+    {
+      icon: "fas fa-mosque",
+      title: { en: "Ancient Merv", ru: "Древний Мерв" },
+      text: { en: "Silk Road oasis city, UNESCO World Heritage Site since 1999", ru: "Город-оазис на Шёлковом пути, объект Всемирного наследия ЮНЕСКО с 1999 года" }
+    },
+    {
+      icon: "fas fa-people-group",
+      title: { en: "K\u00fcshtdepdi", ru: "Кюштдепди" },
+      text: { en: "Rite of singing and dancing \u2014 UNESCO Intangible Heritage since 2017", ru: "Обряд пения и танца \u2014 нематериальное наследие ЮНЕСКО с 2017 года" }
+    },
+    {
+      icon: "fas fa-landmark",
+      title: { en: "Parthian Nisa", ru: "Парфянская Ниса" },
+      text: { en: "3rd century BC fortress \u2014 UNESCO World Heritage Site", ru: "Крепость III века до н.э. \u2014 объект Всемирного наследия ЮНЕСКО" }
+    },
+    {
+      icon: "fas fa-book-open",
+      title: { en: "Gorogly Epic", ru: "Эпос Гороглы" },
+      text: { en: "Heroic epic poem performed by bahshy storytellers \u2014 UNESCO Heritage 2015", ru: "Героический эпос в исполнении бахши-сказителей \u2014 наследие ЮНЕСКО 2015" }
+    }
+  ]
 };
