@@ -1,0 +1,36 @@
+{{ define "header" }}
+<style type="text/css">
+  header.intro-header {
+    background-image: url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}{{ .Site.Params.header_image | relURL }}{{ end }}')
+  }
+</style>
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>{{ .Title }}</h1>
+          <span class="subheading">{{ .Description }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+      {{ with .Content }}
+        <div class="team-intro">{{ . }}</div>
+      {{ end }}
+      <div class="team-grid row">
+        {{ range .Pages.ByWeight }}
+          {{ partial "team-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

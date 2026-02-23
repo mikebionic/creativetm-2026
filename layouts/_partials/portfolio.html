@@ -1,0 +1,68 @@
+<!-- Forum Introduction Banner -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+
+      <section class="forum-banner">
+        <div class="forum-badge">CCA 2026</div>
+        <h2>Creative Central Asia 2026</h2>
+        <p class="forum-location">
+          <i class="fas fa-map-marker-alt"></i> Tashkent, Uzbekistan &middot; February 28, 2026
+        </p>
+        <p class="forum-description">
+          From cities to communities, creative industries shape how we live, work, and imagine the future.
+          Meet the creative professionals from <strong>Turkmenistan</strong> &mdash; filmmakers, animators, AI specialists,
+          digital educators, and agency founders &mdash; presenting their vision for Central Asia's creative economy.
+        </p>
+        <div class="forum-tags">
+          <span class="forum-tag">Collaboration</span>
+          <span class="forum-tag">Impact Investment</span>
+          <span class="forum-tag">AI &amp; Education</span>
+          <span class="forum-tag">Cross-disciplinarity</span>
+        </div>
+        <div class="forum-cta">
+          <a href="https://ccaforum.uz" target="_blank" class="btn btn-primary btn-cta">
+            <i class="fas fa-external-link-alt"></i> Register at ccaforum.uz
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Team Grid -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+
+      <section class="team-section">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Creative Turkmenistan Delegation</p>
+        <div class="team-grid row">
+          {{ range (where .Site.RegularPages "Type" "team").ByWeight }}
+            {{ partial "team-card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- Hashtags / CTA Section -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+      <section class="hashtag-section">
+        <p class="hashtags">
+          #CCA2026 #CreativeCentralAsia2026 #CreativeTurkmenistan
+        </p>
+        <p class="support-cta">
+          Be part of what comes next &mdash; online or offline.<br>
+          Support Creative Team from Turkmenistan!
+        </p>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,731 @@
+/* ===================================================================
+   Creative Turkmenistan 2026 — Team Portfolio Styles
+   =================================================================== */
+
+/* ===== Hero Header Gradient ===== */
+header.intro-header {
+  background: linear-gradient(135deg, #00843D 0%, #006b30 25%, #0085a1 50%, #004d5c 75%, #1a1a2e 100%) !important;
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header.intro-header .site-heading h1 {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header.intro-header .site-heading .subheading {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+/* ===== Forum Banner ===== */
+.forum-banner {
+  text-align: center;
+  padding: 50px 30px 40px;
+  margin: 30px 0 50px;
+  background: linear-gradient(135deg,
+    rgba(0, 133, 161, 0.06) 0%,
+    rgba(0, 133, 161, 0.02) 50%,
+    rgba(46, 204, 113, 0.04) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 133, 161, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.forum-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00a86b, #0085a1, #00a86b);
+}
+
+.forum-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #0085a1, #00a86b);
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.forum-banner h2 {
+  color: #333;
+  margin: 0 0 12px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.forum-location {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.forum-location i {
+  color: #0085a1;
+}
+
+.forum-description {
+  color: #555;
+  font-size: 1.05em;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.forum-tags {
+  margin: 20px 0;
+}
+
+.forum-tag {
+  display: inline-block;
+  background: rgba(0, 133, 161, 0.08);
+  color: #0085a1;
+  padding: 5px 14px;
+  border-radius: 16px;
+  font-size: 0.82em;
+  font-weight: 600;
+  margin: 4px;
+  border: 1px solid rgba(0, 133, 161, 0.15);
+}
+
+.forum-cta {
+  margin-top: 25px;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, #0085a1, #006b80);
+  border: none;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background: linear-gradient(135deg, #006b80, #004d5c);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 133, 161, 0.3);
+  text-decoration: none;
+}
+
+.btn-cta i {
+  margin-right: 6px;
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0085a1, #00a86b);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1em;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* ===== Team Section ===== */
+.team-section {
+  margin-bottom: 50px;
+}
+
+.team-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+/* ===== Team Card Grid ===== */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 30px 20px 25px;
+  margin-bottom: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0085a1, #00a86b);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Avatar */
+.team-card-avatar {
+  margin-bottom: 18px;
+}
+
+.team-card-avatar img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0085a1;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover .team-card-avatar img {
+  border-color: #00a86b;
+  transform: scale(1.05);
+}
+
+.avatar-placeholder {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 52px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.team-card:hover .avatar-placeholder {
+  transform: scale(1.05);
+}
+
+.avatar-placeholder-lg {
+  width: 180px;
+  height: 180px;
+  font-size: 72px;
+  flex-shrink: 0;
+}
+
+.team-card-link {
+  text-decoration: none;
+}
+
+/* Card text */
+.team-card-name {
+  margin: 0 0 6px;
+  font-size: 1.25em;
+}
+
+.team-card-name a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.team-card-name a:hover {
+  color: #0085a1;
+}
+
+.team-card-role {
+  color: #0085a1;
+  font-weight: 600;
+  margin: 4px 0 8px;
+  font-size: 0.88em;
+}
+
+.team-card-org {
+  color: #888;
+  font-size: 0.82em;
+  margin-bottom: 10px;
+}
+
+.team-card-org i {
+  margin-right: 4px;
+}
+
+.team-card-excerpt {
+  color: #777;
+  font-size: 0.88em;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Social links in card */
+.team-card-social {
+  margin: 12px 0;
+}
+
+.team-card-social a {
+  color: #999;
+  margin: 0 10px;
+  font-size: 1.3em;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.team-card-social a:hover {
+  color: #0085a1;
+  transform: scale(1.15);
+}
+
+/* Skill tags */
+.skill-tag {
+  display: inline-block;
+  background: rgba(0, 133, 161, 0.08);
+  color: #0085a1;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  margin: 3px 2px;
+  font-weight: 600;
+  border: 1px solid rgba(0, 133, 161, 0.12);
+}
+
+.skill-tag-lg {
+  font-size: 0.85em;
+  padding: 5px 16px;
+}
+
+.team-card-skills {
+  margin-top: 10px;
+}
+
+/* ===== Hashtag / CTA Section ===== */
+.hashtag-section {
+  text-align: center;
+  padding: 30px 20px 40px;
+  margin-bottom: 30px;
+}
+
+.hashtags {
+  color: #0085a1;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.support-cta {
+  color: #666;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+/* ===== Member Detail Page ===== */
+.member-profile {
+  padding-bottom: 40px;
+}
+
+.member-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.member-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0085a1;
+  flex-shrink: 0;
+}
+
+.member-quick-info h2 {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-size: 1.8em;
+}
+
+.member-role {
+  color: #0085a1;
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.member-org {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.member-org i,
+.member-quick-info .fa-map-marker-alt {
+  color: #0085a1;
+  margin-right: 5px;
+}
+
+.member-skills {
+  margin-bottom: 30px;
+}
+
+.member-bio {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #444;
+}
+
+.member-bio h2, .member-bio h3 {
+  margin-top: 30px;
+  color: #333;
+}
+
+.member-bio strong {
+  color: #333;
+}
+
+.member-bio ul {
+  padding-left: 20px;
+}
+
+.member-bio li {
+  margin-bottom: 8px;
+}
+
+/* Projects */
+.member-projects {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+
+.member-projects h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.member-projects h3 i {
+  color: #0085a1;
+  margin-right: 8px;
+}
+
+.project-item {
+  padding: 20px;
+  margin-bottom: 15px;
+  background: rgba(0, 133, 161, 0.03);
+  border-left: 4px solid #0085a1;
+  border-radius: 0 8px 8px 0;
+  transition: background 0.2s;
+}
+
+.project-item:hover {
+  background: rgba(0, 133, 161, 0.06);
+}
+
+.project-item h4 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.project-item p {
+  color: #666;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Social Links on Member Page */
+.member-social-links {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+
+.member-social-links h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.member-social-links h3 i {
+  color: #0085a1;
+  margin-right: 8px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-btn i {
+  font-size: 1.1em;
+}
+
+.social-btn-instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social-btn-tiktok {
+  background: #010101;
+}
+
+.social-btn-linkedin {
+  background: #0077b5;
+}
+
+.social-btn-website {
+  background: #0085a1;
+}
+
+
+/* ===== Dark Mode ===== */
+[data-theme="dark"] .forum-banner {
+  background: linear-gradient(135deg,
+    rgba(0, 133, 161, 0.12) 0%,
+    rgba(0, 133, 161, 0.05) 50%,
+    rgba(46, 204, 113, 0.08) 100%);
+  border-color: rgba(0, 133, 161, 0.25);
+}
+
+[data-theme="dark"] .forum-banner h2 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .forum-location {
+  color: #aaa;
+}
+
+[data-theme="dark"] .forum-description {
+  color: #bbb;
+}
+
+[data-theme="dark"] .forum-tag {
+  background: rgba(0, 133, 161, 0.15);
+  border-color: rgba(0, 133, 161, 0.3);
+}
+
+[data-theme="dark"] .section-title {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: #999;
+}
+
+[data-theme="dark"] .team-card {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+[data-theme="dark"] .team-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .team-card-name a {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .team-card-excerpt {
+  color: #aaa;
+}
+
+[data-theme="dark"] .team-card-org {
+  color: #999;
+}
+
+[data-theme="dark"] .team-card-social a {
+  color: #888;
+}
+
+[data-theme="dark"] .skill-tag {
+  background: rgba(0, 133, 161, 0.18);
+  border-color: rgba(0, 133, 161, 0.3);
+}
+
+[data-theme="dark"] .hashtags {
+  color: #0085a1;
+}
+
+[data-theme="dark"] .support-cta {
+  color: #aaa;
+}
+
+/* Member page dark mode */
+[data-theme="dark"] .member-header {
+  border-bottom-color: #333;
+}
+
+[data-theme="dark"] .member-quick-info h2 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .member-org {
+  color: #aaa;
+}
+
+[data-theme="dark"] .member-bio {
+  color: #ccc;
+}
+
+[data-theme="dark"] .member-bio h2,
+[data-theme="dark"] .member-bio h3,
+[data-theme="dark"] .member-bio strong {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .member-projects {
+  border-top-color: #333;
+}
+
+[data-theme="dark"] .member-projects h3,
+[data-theme="dark"] .member-projects h4 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .project-item {
+  background: rgba(0, 133, 161, 0.08);
+}
+
+[data-theme="dark"] .project-item:hover {
+  background: rgba(0, 133, 161, 0.12);
+}
+
+[data-theme="dark"] .project-item p {
+  color: #bbb;
+}
+
+[data-theme="dark"] .member-social-links {
+  border-top-color: #333;
+}
+
+[data-theme="dark"] .member-social-links h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .team-intro {
+  color: #bbb;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .member-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .member-avatar,
+  .avatar-placeholder-lg {
+    width: 140px;
+    height: 140px;
+  }
+
+  .avatar-placeholder-lg {
+    font-size: 56px;
+  }
+
+  .member-quick-info h2 {
+    font-size: 1.5em;
+  }
+
+  .forum-banner {
+    padding: 35px 20px 30px;
+  }
+
+  .forum-banner h2 {
+    font-size: 1.5em;
+  }
+
+  .section-title {
+    font-size: 1.6em;
+  }
+
+  .team-card {
+    margin-bottom: 20px;
+  }
+
+  .social-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-avatar img,
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar-placeholder {
+    font-size: 42px;
+  }
+
+  .forum-banner h2 {
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00843D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#006b30;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg)" stroke="#fff" stroke-width="3"/>
+  <text x="100" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff">CREATIVE</text>
+  <text x="100" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">TURKMENISTAN</text>
+  <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)">2026</text>
+  <circle cx="55" cy="160" r="5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="75" cy="165" r="3" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="125" cy="165" r="3" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="145" cy="160" r="5" fill="rgba(255,255,255,0.4)"/>
+</svg>

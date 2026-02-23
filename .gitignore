@@ -2,3 +2,6 @@
 Thumbs.db
 *.swp
 *~
+public/
+resources/
+.hugo_build.lock

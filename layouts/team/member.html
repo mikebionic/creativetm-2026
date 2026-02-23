@@ -1,0 +1,133 @@
+{{ define "header" }}
+<style type="text/css">
+  header.intro-header {
+    background-image: url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}{{ .Site.Params.header_image | relURL }}{{ end }}')
+  }
+</style>
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.role }}
+            <h2 class="subheading">{{ . }}</h2>
+          {{ end }}
+          <span class="meta">
+            {{ with .Params.organization }}<i class="fas fa-building"></i> {{ . }}{{ end }}
+            {{ with .Params.location }} &middot; <i class="fas fa-map-marker-alt"></i> {{ . }}{{ end }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<article class="member-profile">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+
+        <!-- Avatar and quick info -->
+        <div class="member-header">
+          {{ $avatar := .Resources.GetMatch "avatar.*" }}
+          {{ if $avatar }}
+            <img src="{{ $avatar.RelPermalink }}" alt="{{ .Title }}" class="member-avatar" />
+          {{ else }}
+            {{ $colors := slice "#0085a1" "#e74c3c" "#2ecc71" "#9b59b6" "#f39c12" "#1abc9c" }}
+            {{ $index := mod .Weight 6 }}
+            {{ $color := index $colors $index }}
+            <div class="avatar-placeholder avatar-placeholder-lg" style="background: {{ $color }}">
+              {{ substr .Title 0 1 }}
+            </div>
+          {{ end }}
+          <div class="member-quick-info">
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.role }}
+              <p class="member-role">{{ . }}</p>
+            {{ end }}
+            {{ with .Params.organization }}
+              <p class="member-org"><i class="fas fa-building"></i> {{ . }}</p>
+            {{ end }}
+            {{ with .Params.location }}
+              <p><i class="fas fa-map-marker-alt"></i> {{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Skills -->
+        {{ with .Params.skills }}
+        <div class="member-skills">
+          {{ range . }}
+            <span class="skill-tag skill-tag-lg">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- Bio content from markdown -->
+        <div class="member-bio">
+          {{ .Content }}
+        </div>
+
+        <!-- Projects -->
+        {{ with .Params.projects }}
+        <div class="member-projects">
+          <h3><i class="fas fa-project-diagram"></i> Projects</h3>
+          {{ range . }}
+          <div class="project-item">
+            <h4>{{ .name }}</h4>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- Social Links -->
+        {{ with .Params.social }}
+        <div class="member-social-links">
+          <h3><i class="fas fa-link"></i> Connect</h3>
+          <div class="social-buttons">
+            {{ with .instagram }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-instagram">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            {{ end }}
+            {{ with .instagram_alt }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-instagram">
+                <i class="fab fa-instagram"></i> Studio
+              </a>
+            {{ end }}
+            {{ with .tiktok }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-tiktok">
+                <i class="fab fa-tiktok"></i> TikTok
+              </a>
+            {{ end }}
+            {{ with .tiktok_work }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-tiktok">
+                <i class="fab fa-tiktok"></i> Latest Work
+              </a>
+            {{ end }}
+            {{ with .linkedin }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            {{ end }}
+            {{ with .website }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="social-btn social-btn-website">
+                <i class="fas fa-globe"></i> Website
+              </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+      </div>
+
+      <!-- Sidebar -->
+      {{ partial "sidebar.html" . }}
+    </div>
+  </div>
+</article>
+{{ end }}

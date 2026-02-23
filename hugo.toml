@@ -1,0 +1,58 @@
+baseURL = "https://mikebionic.github.io/creativetm-2026/"
+title = "Creative Turkmenistan 2026"
+theme = "hugo-theme-cleanwhite"
+languageCode = "en-us"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  SEOTitle = "Creative Turkmenistan | Creative Central Asia 2026"
+  description = "Meet the creative professionals from Turkmenistan — filmmakers, animators, AI specialists, digital educators, and agency founders — at the Creative Central Asia Forum 2026 in Tashkent, Uzbekistan."
+  keyword = "Turkmenistan, Creative Economy, CCA2026, Creative Central Asia, Uzbekistan, Tashkent, Animation, AI, Film, Digital Arts, TechWomen, Studio22, Jam Creative"
+  slogan = "Creativity Without Borders"
+  header_image = "img/hero-bg.jpg"
+  omit_categories = true
+  upstreamAttribution = false
+
+  # Sidebar
+  sidebar_about_description = "Turkmenistan's creative delegation at Creative Central Asia 2026 in Tashkent, Uzbekistan"
+  sidebar_avatar = "img/tm-flag.svg"
+  about_me = true
+  featured_tags = true
+  featured_condition_size = 0
+
+  # Disable blog features
+  friends = false
+  bookmarks = false
+  last_posts = false
+  reward = false
+  page_view_counter = false
+  algolia_search = false
+
+  # Dark mode
+  dark_mode_toggle = true
+
+  # Custom CSS
+  custom_css = ["css/team-portfolio.css"]
+
+  [[params.additional_menus]]
+    title = "TEAM"
+    href = "/team/"
+
+  [[params.additional_menus]]
+    title = "ABOUT"
+    href = "/about/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+
+[mediaTypes]
+  [mediaTypes.'font/woff']
+    suffixes = ['woff']
+  [mediaTypes.'font/woff2']
+    suffixes = ['woff2']
