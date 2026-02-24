@@ -96,6 +96,11 @@ const team = [
       instagram2: "https://instagram.com/imdatbot",
       email: "Rejepov.bat@gmail.com"
     },
+    portfolio: [
+      "images/portfolio/batyr/imdatbot-1.jpg",
+      "images/portfolio/batyr/imdatbot-2.jpg",
+      "images/portfolio/batyr/imdatbot-3.jpg"
+    ],
     projects: [
       { name: "Clever Marketing", desc: "AI consulting company specializing in integrating artificial intelligence into business processes" },
       { name: "Imdatbot", desc: "Robotics and programming education center — first in Turkmenistan with ISO 9001 certification" },
@@ -181,6 +186,12 @@ const team = [
     bio: "Begench Rejepov is a startup founder from Turkmenistan who attracted the country's first venture capital investment. His food delivery service Biar has completed 1 incubation and 2 acceleration programs, placed 3rd at the international Hi-Tech Forum in Ashgabat, 2nd at \"Sanly çözgüt 2024\", and reached the top 10 Central Asian startups at Startup Battle in Tashkent. His second project, Hinlen, is a music streaming platform focused on Central Asia, supporting local artists with online and offline listening via premium subscription — backed by IT Park Uzbekistan.",
     skills: ["Startups", "Venture Capital", "Food Delivery", "Music Streaming", "Product Development"],
     social: { instagram: "https://instagram.com/mr.biar" },
+    portfolio: [
+      "images/portfolio/begench/hinlen-1.jpg",
+      "images/portfolio/begench/hinlen-2.jpg",
+      "images/portfolio/begench/hinlen-3.jpg",
+      "images/portfolio/begench/biar-1.jpg"
+    ],
     projects: [
       { name: "Biar Delivery", desc: "Food delivery service helping cafes get orders and new customers. First venture-funded startup in Turkmenistan. Top-10 at Startup Battle Tashkent.", url: "https://biar.biz/" },
       { name: "Hinlen", desc: "Music streaming platform for Central Asia — supporting local artists with online & offline premium listening. Backed by IT Park Uzbekistan.", url: "https://hinlen.com" }
@@ -593,6 +604,7 @@ function applyTranslations(lang) {
   applyStaticTranslations(lang);
   renderCards();
   renderHeritage();
+  renderProgramme(lang);
   document.title = (I18N.ui["page.title"][lang] || I18N.ui["page.title"].en);
   // Re-render open modal
   const modal = document.getElementById("member-modal");
@@ -612,6 +624,220 @@ function setLang(lang) {
 function toggleLang() {
   setLang(getLang() === "en" ? "ru" : "en");
 }
+
+// --- Programme Timeline Render ---
+function renderProgramme(lang) {
+  const el = document.getElementById("programme-timeline");
+  if (!el || !I18N.programme) return;
+  el.innerHTML = I18N.programme.map(item => `
+    <div class="tl-node reveal${item.highlight ? ' highlight' : ''}">
+      <div class="tl-time">${item.time}</div>
+      <div class="tl-title">${item.title[lang] || item.title.en}</div>
+    </div>
+  `).join("");
+  // Re-observe new reveal elements
+  if (window._revealObserver) {
+    el.querySelectorAll('.reveal').forEach(r => window._revealObserver.observe(r));
+  }
+}
+
+// --- Scroll Reveal (IntersectionObserver) ---
+(function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  window._revealObserver = observer;
+
+  // Observe existing .reveal elements and section titles/subtitles (NOT whole sections)
+  function observeAll() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+    // Reveal section titles and subtitles, not entire sections
+    document.querySelectorAll('.section-title, .section-subtitle, .heritage-footer, .mq-attribution').forEach(el => {
+      if (!el.classList.contains('reveal')) el.classList.add('reveal');
+      observer.observe(el);
+    });
+    // Add staggered delays to grid children
+    document.querySelectorAll('.team-grid .card, .about-highlights .highlight-card, .stats-grid .stat-card, .about-text p').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.1}s`;
+      if (!el.classList.contains('reveal')) el.classList.add('reveal');
+      observer.observe(el);
+    });
+  }
+  // Run after initial render
+  setTimeout(observeAll, 100);
+  // Re-run when language changes cards
+  const origRenderCards = renderCards;
+  renderCards = function() {
+    origRenderCards();
+    setTimeout(() => {
+      document.querySelectorAll('.team-grid .card').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.1}s`;
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    }, 50);
+  };
+})();
+
+// --- Kinetic Hero Typography ---
+(function initKineticHero() {
+  const h1 = document.querySelector('.hero h1');
+  const label = document.querySelector('.hero-label');
+  const slogan = document.querySelector('.hero-slogan');
+  const cta = document.querySelector('.btn-hero');
+  if (!h1) return;
+
+  function splitAndAnimate() {
+    const text = h1.textContent;
+    h1.innerHTML = text.split('').map((ch, i) => {
+      if (ch === ' ') return ' ';
+      return `<span class="letter" style="animation-delay:${i * 0.04}s">${ch}</span>`;
+    }).join('');
+
+    const totalLetterTime = text.length * 0.04 + 0.5;
+    setTimeout(() => { if (label) label.classList.add('kinetic-visible'); }, 100);
+    setTimeout(() => { if (slogan) slogan.classList.add('kinetic-visible'); }, totalLetterTime * 1000);
+    setTimeout(() => { if (cta) cta.classList.add('kinetic-visible'); }, totalLetterTime * 1000 + 300);
+  }
+
+  splitAndAnimate();
+
+  // Re-split on language change
+  const origApplyStatic = applyStaticTranslations;
+  applyStaticTranslations = function(lang) {
+    origApplyStatic(lang);
+    // Restore text first, then re-split
+    const entry = I18N.ui["hero.title"];
+    if (entry) h1.textContent = entry[lang] || entry.en;
+    splitAndAnimate();
+  };
+})();
+
+// --- Magtymguly Quote (scroll-driven typewriter) ---
+(function initMagtymguly() {
+  const wrap = document.querySelector('.mq-wrap');
+  const quote = document.querySelector('.mq-quote');
+  if (!wrap || !quote) return;
+  const section = document.querySelector('.magtymguly-section');
+  let chars = [];
+
+  function wrapChars() {
+    // Split innerHTML into characters, preserving <br> tags
+    const html = quote.innerHTML;
+    const parts = html.split(/(<br\s*\/?>)/gi);
+    let result = '';
+    parts.forEach(part => {
+      if (part.match(/^<br\s*\/?>$/i)) {
+        result += part;
+      } else {
+        // Decode HTML entities first, then wrap each visible char
+        const tmp = document.createElement('span');
+        tmp.innerHTML = part;
+        const text = tmp.textContent;
+        for (let i = 0; i < text.length; i++) {
+          const ch = text[i];
+          if (ch === ' ') {
+            result += ' ';
+          } else {
+            result += `<span class="mq-char">${ch.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span>`;
+          }
+        }
+      }
+    });
+    quote.innerHTML = result;
+    chars = quote.querySelectorAll('.mq-char');
+  }
+
+  wrapChars();
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const winH = window.innerHeight;
+    const sectionH = section.offsetHeight;
+    // Full range: from section bottom entering viewport to section top leaving
+    const scrolled = winH - rect.top;
+    const totalRange = winH + sectionH;
+    const progress = scrolled / totalRange;
+
+    // Show deco + attribution when section enters
+    if (progress > 0.1) {
+      wrap.classList.add('mq-visible');
+    }
+    // Typewriter: chars type from 20% to 70% of the visible scroll range
+    if (chars.length) {
+      const typeProgress = Math.max(0, Math.min(1, (progress - 0.2) / 0.5));
+      const revealCount = Math.floor(typeProgress * chars.length);
+      chars.forEach((ch, i) => {
+        ch.classList.toggle('typed', i < revealCount);
+      });
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Re-wrap on language change
+  const origApplyTranslations = applyTranslations;
+  applyTranslations = function(lang) {
+    origApplyTranslations(lang);
+    // Re-read the updated innerHTML and re-wrap
+    setTimeout(() => {
+      wrapChars();
+      onScroll();
+    }, 50);
+  };
+})();
+
+// --- Stats Counters ---
+(function initCounters() {
+  let counted = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        document.querySelectorAll('.stat-number').forEach(el => {
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 2000;
+          const start = performance.now();
+          function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+          function update(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.round(easeOutExpo(progress) * target);
+            el.textContent = value + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const statsSection = document.getElementById('stats');
+  if (statsSection) observer.observe(statsSection);
+})();
+
+// --- SVG Route Map (draw on scroll) ---
+(function initRouteMap() {
+  const routeLine = document.querySelector('.route-line');
+  if (!routeLine) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        routeLine.classList.add('drawn');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(routeLine.closest('section') || routeLine);
+})();
 
 (function initLang() {
   const saved = localStorage.getItem("lang");

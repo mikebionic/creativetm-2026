@@ -23,13 +23,39 @@ const I18N = {
     "about.card4.title": { en: "Creative Agency", ru: "Креативное агентство" },
     "about.card4.desc":  { en: "Branding, design, and creative strategy", ru: "Брендинг, дизайн и креативная стратегия" },
     "nav.heritage":    { en: "Heritage", ru: "Наследие" },
+    "nav.programme":   { en: "Programme", ru: "Программа" },
     "heritage.title":  { en: "Our Creativity Is Older Than It Seems", ru: "Наше творчество старше, чем кажется" },
     "heritage.subtitle": { en: "Look at a Turkmen carpet \u2014 every line is a code, every color a meaning. We didn\u2019t learn design \u2014 we inherited it.", ru: "Посмотрите на туркменский ковёр \u2014 каждая линия \u2014 это код, каждый цвет \u2014 смысл. Мы не учились дизайну \u2014 мы его унаследовали." },
     "heritage.footer": { en: "We are heirs to a culture that always valued precision, beauty, and meaning. That\u2019s exactly what the creative economy needs.", ru: "Мы \u2014 наследники культуры, которая всегда ценила точность, красоту и смысл. Именно это нужно креативной экономике." },
     "footer.text":     { en: "Creative Turkmenistan 2026 \u00b7 Creative Economy Forum \u00b7 Uzbekistan", ru: "Креативный Туркменистан 2026 \u00b7 Форум креативной экономики \u00b7 Узбекистан" },
     "ui.portfolio":    { en: "Portfolio", ru: "Портфолио" },
     "ui.projects":     { en: "Projects", ru: "Проекты" },
-    "page.title":      { en: "Creative Turkmenistan 2026", ru: "Креативный Туркменистан 2026" }
+    "page.title":      { en: "Creative Turkmenistan 2026", ru: "Креативный Туркменистан 2026" },
+
+    // Magtymguly — real verse from "Görnür" (Visible)
+    "mq.verse": {
+      en: "Magtymguly, centuries will pass,<br>But your verse shall never die.<br>You&rsquo;ll be seen in the poor man&rsquo;s yurt<br>And in the stone palace high.",
+      ru: "Махтумкули, пройдут века,<br>Но не умрёт твоя строка.<br>Ты будешь в юрте бедняка<br>И в каменной палате виден."
+    },
+    "mq.attribution":  { en: "— Magtymguly Pyragy, \"Görnür\" · XVIII century · UNESCO 2024", ru: "— Махтумкули Фраги, «Виден» · XVIII век · ЮНЕСКО 2024" },
+
+    // Marquee keywords
+    "marquee.text":    { en: "Film • AI • Design • Dance • TechWomen • Branding • Startups • 3D • Music • Education", ru: "Кино • ИИ • Дизайн • Танец • TechWomen • Брендинг • Стартапы • 3D • Музыка • Образование" },
+
+    // Stats
+    "stats.title":     { en: "In Numbers", ru: "В цифрах" },
+    "stats.members":   { en: "Team Members", ru: "Участников" },
+    "stats.disciplines": { en: "Creative Disciplines", ru: "Творческих дисциплин" },
+    "stats.countries":   { en: "Countries at CCA", ru: "Стран на CCA" },
+    "stats.heritage":    { en: "Years of Creative Heritage", ru: "Лет творческого наследия" },
+
+    // Programme
+    "programme.title":    { en: "CCA 2026 Programme", ru: "Программа CCA 2026" },
+    "programme.subtitle": { en: "February 28, 2026 · School 21, Tashkent", ru: "28 февраля 2026 · School 21, Ташкент" },
+
+    // SVG Map
+    "map.ashgabat":    { en: "Ashgabat", ru: "Ашхабад" },
+    "map.tashkent":    { en: "Tashkent / School 21", ru: "Ташкент / School 21" }
   },
 
   team: {
@@ -180,6 +206,20 @@ const I18N = {
       projects: { en: [], ru: [] }
     }
   },
+
+  programme: [
+    { time: "10:00", title: { en: "Press Conference", ru: "Пресс-конференция" }, highlight: false },
+    { time: "11:00", title: { en: "Opening Remarks", ru: "Вступительное слово" }, highlight: false },
+    { time: "11:10", title: { en: "CCA Digest — 5-min presentations per country (incl. Turkmenistan)", ru: "CCA Дайджест — 5-минутные презентации от каждой страны (вкл. Туркменистан)" }, highlight: true },
+    { time: "12:00", title: { en: "Cities Rating Hackathon Results", ru: "Результаты хакатона рейтинга городов" }, highlight: false },
+    { time: "12:30", title: { en: "Speed Dating — Professional Networking", ru: "Speed Dating — профессиональный нетворкинг" }, highlight: false },
+    { time: "13:30", title: { en: "Lunch + Open Mic", ru: "Обед + Open Mic" }, highlight: false },
+    { time: "14:45", title: { en: "Keynote: John Newbigin", ru: "Кейноут: Джон Ньюбигин" }, highlight: false },
+    { time: "15:00", title: { en: "Panel 1: Invisible Infrastructure of Creative Cities", ru: "Панель 1: Невидимая инфраструктура креативных городов" }, highlight: false },
+    { time: "16:00", title: { en: "Panel 2: Speaking the Language of Values", ru: "Панель 2: Говорить на языке ценностей" }, highlight: false },
+    { time: "17:00", title: { en: "Panel 3: Gen-Next Cities: Who Creates Our Future?", ru: "Панель 3: Города нового поколения: кто создаёт наше будущее?" }, highlight: false },
+    { time: "18:00", title: { en: "Closing", ru: "Закрытие" }, highlight: false }
+  ],
 
   heritage: [
     {
