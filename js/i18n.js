@@ -200,10 +200,10 @@ const I18N = {
       projects: { en: [], ru: [] }
     },
     "farhad-artykov": {
-      role:     { en: "Creative", ru: "Креативщик" },
-      bio:      { en: "Farhad Artykov is a creative professional from Turkmenistan, exploring innovative approaches to art and digital media.", ru: "Фархад Артыков — креативный профессионал из Туркменистана, исследующий инновационные подходы к искусству и цифровым медиа." },
-      skills:   { en: ["Creative", "Digital Media"], ru: ["Креатив", "Цифровые медиа"] },
-      projects: { en: [], ru: [] }
+      role:     { en: "Digital Innovation & Creative Economy", ru: "Цифровые инновации и креативная экономика" },
+      bio:      { en: "Farhad Artykov is a digital technologies and innovation specialist with over 15 years of experience working with international IT companies and development organizations. He has worked with companies such as Microsoft and Huawei, as well as with the United Nations Development Programme (UNDP), contributing to digital transformation and innovation projects. He is a co-founder of the Creative Economy and Innovation Department under the Union of Economists of Turkmenistan.", ru: "Фархад Артыков — специалист по цифровым технологиям и инновациям с более чем 15-летним опытом работы с международными ИТ-компаниями и организациями развития. Работал с такими компаниями, как Microsoft и Huawei, а также с Программой развития ООН (ПРООН), участвуя в проектах цифровой трансформации и инноваций. Является сооснователем Департамента креативной экономики и инноваций при Союзе экономистов Туркменистана." },
+      skills:   { en: ["Digital Innovation", "IT Strategy", "Creative Economy", "Digital Transformation", "International Development"], ru: ["Цифровые инновации", "ИТ-стратегия", "Креативная экономика", "Цифровая трансформация", "Международное развитие"] },
+      projects: { en: [{ name: "Creative Economy & Innovation Dept.", desc: "Co-founded the Creative Economy and Innovation Department under the Union of Economists of Turkmenistan" }], ru: [{ name: "Департамент креативной экономики и инноваций", desc: "Сооснователь Департамента креативной экономики и инноваций при Союзе экономистов Туркменистана" }] }
     }
   },
 

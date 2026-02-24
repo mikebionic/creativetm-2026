@@ -213,15 +213,17 @@ const team = [
   {
     id: "farhad-artykov",
     name: "Farhad Artykov",
-    role: "Creative",
-    org: "",
+    role: "Digital Innovation & Creative Economy",
+    org: "Union of Economists of Turkmenistan",
     location: "Turkmenistan",
-    avatar: "",
+    avatar: "images/farhad-avatar.jpg",
     color: "#3F51B5",
-    bio: "Farhad Artykov is a creative professional from Turkmenistan, exploring innovative approaches to art and digital media.",
-    skills: ["Creative", "Digital Media"],
-    social: { instagram: "https://instagram.com/farhad_artykov" },
-    projects: []
+    bio: "Farhad Artykov is a digital technologies and innovation specialist with over 15 years of experience working with international IT companies and development organizations. He has worked with companies such as Microsoft and Huawei, as well as with the United Nations Development Programme (UNDP), contributing to digital transformation and innovation projects. He is a co-founder of the Creative Economy and Innovation Department under the Union of Economists of Turkmenistan.",
+    skills: ["Digital Innovation", "IT Strategy", "Creative Economy", "Digital Transformation", "International Development"],
+    social: { linkedin: "https://www.linkedin.com/in/farhad-artykov" },
+    projects: [
+      { name: "Creative Economy & Innovation Dept.", desc: "Co-founded the Creative Economy and Innovation Department under the Union of Economists of Turkmenistan" }
+    ]
   }
 ];
 
