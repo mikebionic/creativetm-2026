@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Turkmenistan 2026</title>
   <meta name="description" content="Turkmenistan's creative delegation for the Creative Economy Forum 2026 in Uzbekistan">
-  <link rel="stylesheet" href="css/style.css?v=1708853100">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css?v=1708853200">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
+  <!-- Sticky background logo watermark -->
+  <div class="bg-logo" id="bg-logo" aria-hidden="true">
+    <img src="images/logo.png" alt="">
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#" class="nav-brand">Creative TM 2026</a>
+      <a href="#" class="nav-brand"><img src="images/logo.png" alt="Creative TM" class="nav-logo">Creative TM 2026</a>
       <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -60,6 +66,7 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
+      <img src="images/logo.png" alt="Creative TM Logo" class="hero-logo" id="hero-logo">
       <p class="hero-label" data-i18n="hero.label">Creative Economy Forum 2026 &middot; Uzbekistan</p>
       <h1 data-i18n="hero.title">Creative Turkmenistan</h1>
       <p class="hero-slogan" data-i18n="hero.slogan">Creativity Without Borders</p>
@@ -228,7 +235,7 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=1708853100"></script>
-  <script src="js/app.js?v=1708853100"></script>
+  <script src="js/i18n.js?v=1708853200"></script>
+  <script src="js/app.js?v=1708853200"></script>
 </body>
 </html>

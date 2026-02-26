@@ -566,11 +566,27 @@ function toggleTheme() {
   if (icon) icon.className = saved === "dark" ? "fas fa-moon" : "fas fa-sun";
 })();
 
-// --- Navbar scroll effect + hero pattern parallax ---
+// --- Navbar scroll effect + hero pattern parallax + logo rotation ---
 const _patternLayer = document.querySelector(".hero-pattern-layer");
+const _heroLogo = document.getElementById("hero-logo");
+const _bgLogo = document.getElementById("bg-logo");
+const _bgLogoImg = _bgLogo ? _bgLogo.querySelector("img") : null;
+const _hero = document.getElementById("hero");
 window.addEventListener("scroll", () => {
-  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
-  if (_patternLayer) _patternLayer.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+  const sy = window.scrollY;
+  document.getElementById("navbar").classList.toggle("scrolled", sy > 50);
+  if (_patternLayer) _patternLayer.style.transform = `translateY(${sy * 0.3}px)`;
+  // Hero logo: rotate + fade out as hero scrolls away
+  const heroH = _hero ? _hero.offsetHeight : 600;
+  if (_heroLogo) {
+    _heroLogo.style.transform = `rotate(${sy * 0.15}deg)`;
+    _heroLogo.style.opacity = Math.max(0, 1 - sy / (heroH * 0.6));
+  }
+  // Background watermark: appear after hero, keep rotating
+  if (_bgLogo) {
+    _bgLogo.classList.toggle("visible", sy > heroH * 0.5);
+    if (_bgLogoImg) _bgLogoImg.style.transform = `rotate(${sy * 0.08}deg)`;
+  }
 }, { passive: true });
 
 // --- Smooth scroll ---

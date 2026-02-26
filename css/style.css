@@ -44,7 +44,8 @@ img { max-width: 100%; display: block; }
 }
 .navbar.scrolled { background: var(--nav-bg); box-shadow: var(--nav-shadow); backdrop-filter: blur(10px); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.nav-brand { font-weight: 700; font-size: 1.1rem; color: #fff; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; color: #fff; display: flex; align-items: center; gap: 8px; }
+.nav-logo { height: 32px; width: auto; }
 .navbar.scrolled .nav-brand { color: var(--text); }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { color: rgba(255,255,255,.85); font-weight: 500; font-size: .95rem; transition: color var(--transition); }
@@ -86,6 +87,27 @@ img { max-width: 100%; display: block; }
   font-weight: 600; font-size: 1rem; transition: transform var(--transition), box-shadow var(--transition);
 }
 .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,115,232,.3); color: #fff; }
+
+/* === Hero Logo (scroll-driven rotation) === */
+.hero-logo {
+  width: clamp(120px, 25vw, 200px); height: auto; margin: 0 auto 24px;
+  display: block; filter: drop-shadow(0 0 30px rgba(233,30,99,.25));
+  will-change: transform; transition: opacity .4s ease;
+}
+
+/* === Sticky Background Logo Watermark === */
+.bg-logo {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; z-index: 0;
+  opacity: 0; transition: opacity .6s ease;
+}
+.bg-logo img {
+  width: min(80vw, 80vh); height: auto;
+  will-change: transform;
+}
+.bg-logo.visible { opacity: .04; }
+[data-theme="light"] .bg-logo.visible { opacity: .06; }
 
 /* === Team Grid === */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
