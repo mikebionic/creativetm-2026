@@ -103,17 +103,19 @@ const I18N = {
       }
     },
     "kemal-babayev": {
-      role:     { en: "Filmmaker / 3D Artist / AI Creator", ru: "Кинематографист / 3D-художник / AI-креатор" },
-      bio:      { en: "Kemal Babayev is a multidisciplinary creator at Studio22, working across filmmaking, 3D visualization, and AI-generated art. His work pushes the boundaries of visual storytelling in Central Asia.", ru: "Кемал Бабаев — мультидисциплинарный создатель в Studio22, работающий в кинопроизводстве, 3D-визуализации и AI-искусстве. Его работы раздвигают границы визуального повествования в Центральной Азии." },
-      skills:   { en: ["Filmmaking", "3D Art", "AI Art", "Visual Effects", "Creative Direction"], ru: ["Кинопроизводство", "3D-искусство", "AI-искусство", "Визуальные эффекты", "Креативное руководство"] },
+      role:     { en: "Cinematographer & Director / Head of 2D/3D Animation, Studio22", ru: "Оператор и режиссёр / Руководитель 2D/3D анимации, Studio22" },
+      bio:      { en: "Cinematographer, director, 3D generalist, and AI content creator. Works on full-cycle commercial projects: from concept and production to final delivery with graphics and neural networks. Heads the 2D/3D animation department at Studio22, leading a team of talented artists, animators, and technical specialists. Studio22 is a full-cycle creative agency from Turkmenistan.", ru: "Практикующий оператор и режиссёр, 3D-дженералист и AI-контент-креатор. Работает с коммерческими проектами полного цикла: от идеи и продакшна до финального продакшн-пакета с графикой и нейросетями. Возглавляет департамент 2D и 3D анимации в Studio22. Под его руководством работает команда талантливых художников, аниматоров и технических специалистов. Studio22 — креативное агентство полного цикла из Туркменистана." },
+      skills:   { en: ["Cinematography", "Directing", "3D Animation", "2D Animation", "AI Content", "Neural Networks"], ru: ["Операторское искусство", "Режиссура", "3D-анимация", "2D-анимация", "AI-контент", "Нейросети"] },
       projects: {
         en: [
-          { name: "Studio22", desc: "Creative studio for film production, 3D visualization, and digital art" },
-          { name: "AI Art Explorations", desc: "Generating art and visuals using AI tools and creative workflows" }
+          { name: "Studio22", desc: "Full-cycle creative agency bridging Central Asian culture with AI and high-quality 2D/3D animation" },
+          { name: "Goshalar", desc: "First animated series in Turkmenistan about modern secular life (12+) — two childhood friends reuniting to face life's challenges together" },
+          { name: "Paylash", desc: "Educational animated character for preschoolers — teaching through play and empathy, with merchandising potential" }
         ],
         ru: [
-          { name: "Studio22", desc: "Креативная студия кинопроизводства, 3D-визуализации и цифрового искусства" },
-          { name: "AI-искусство", desc: "Создание арта и визуалов с помощью AI-инструментов и креативных процессов" }
+          { name: "Studio22", desc: "Креативное агентство полного цикла, объединяющее культуру Центральной Азии с ИИ и высококлассной 2D/3D анимацией" },
+          { name: "Гошалар", desc: "Первый в Туркменистане мультсериал о светской жизни (12+) — история двух друзей детства, которые встречаются спустя годы, чтобы вместе справляться с жизненными вызовами" },
+          { name: "Пайлаш", desc: "Образовательный мультгерой для дошкольников — обучение через игру и сопереживание, с потенциалом для мерчандайзинга" }
         ]
       }
     },
@@ -138,14 +140,14 @@ const I18N = {
     },
     "vasiliy": {
       role:     { en: "Creative Agency Founder", ru: "Основатель креативного агентства" },
-      bio:      { en: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering branding, design, and creative strategy for clients across Turkmenistan and Central Asia.", ru: "Василий Андронов — основатель Jam Creative Agency, предоставляющего услуги брендинга, дизайна и креативной стратегии клиентам по всему Туркменистану и Центральной Азии." },
-      skills:   { en: ["Branding", "Creative Strategy", "Design", "Agency Management", "Marketing"], ru: ["Брендинг", "Креативная стратегия", "Дизайн", "Управление агентством", "Маркетинг"] },
+      bio:      { en: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering creative strategy and marketing solutions for clients across Turkmenistan and Central Asia.", ru: "Василий Андронов — основатель Jam Creative Agency, предоставляющего креативную стратегию и маркетинговые решения клиентам по всему Туркменистану и Центральной Азии." },
+      skills:   { en: ["Creative Strategy", "Agency Management", "Marketing", "Content Production"], ru: ["Креативная стратегия", "Управление агентством", "Маркетинг", "Контент-продакшн"] },
       projects: {
         en: [
-          { name: "Jam Creative Agency", desc: "Full-service creative agency specializing in branding, design, and marketing strategy" }
+          { name: "Jam Creative Agency", desc: "Creative agency specializing in marketing strategy and content production" }
         ],
         ru: [
-          { name: "Jam Creative Agency", desc: "Полносервисное креативное агентство, специализирующееся на брендинге, дизайне и маркетинговой стратегии" }
+          { name: "Jam Creative Agency", desc: "Креативное агентство, специализирующееся на маркетинговой стратегии и контент-продакшне" }
         ]
       }
     },
@@ -173,10 +175,21 @@ const I18N = {
       projects: { en: [], ru: [] }
     },
     "alexandra-ahmedova": {
-      role:     { en: "Career Consultant & Trainer", ru: "Карьерный консультант и тренер" },
-      bio:      { en: "Aleksandra Ahmedova is a career orientation specialist, trainer, and career consultant helping people find their professional path.", ru: "Александра Ахмедова — специалист по профориентации, тренер и карьерный консультант, помогающая людям найти свой профессиональный путь." },
-      skills:   { en: ["Career Consulting", "Training", "Career Orientation", "Coaching"], ru: ["Карьерный консалтинг", "Тренинги", "Профориентация", "Коучинг"] },
-      projects: { en: [], ru: [] }
+      role:     { en: "CEO, Mumkinchilik Dunyasi / Project Manager", ru: "CEO «Мümкинчилик дуньяси» / Проектный менеджер" },
+      bio:      { en: "CEO of Mumkinchilik Dunyasi, a youth organization whose mission is to implement career orientation, career consulting, and develop soft skills among Turkmen youth. Project manager of international programs TechnovationGirls Turkmenistan and GoViral. Active participant in social initiatives. Certified trainer and mentor of the startup ecosystem.", ru: "CEO «Мümкинчилик дуньяси» — молодёжной организации, миссия которой — внедрение профориентации, карьерного консультирования и развитие надпрофессиональных навыков у туркменской молодёжи. Проектный менеджер международных программ TechnovationGirls Turkmenistan и GoViral. Активный участник социальных мероприятий. Сертифицированный тренер и ментор стартап-экосистемы." },
+      skills:   { en: ["Career Consulting", "Youth Development", "Project Management", "Startup Mentoring", "Training"], ru: ["Карьерный консалтинг", "Развитие молодёжи", "Проектный менеджмент", "Менторство стартапов", "Тренинги"] },
+      projects: {
+        en: [
+          { name: "Mumkinchilik Dunyasi", desc: "Youth organization for career orientation, career consulting, and soft skills development in Turkmenistan" },
+          { name: "TechnovationGirls Turkmenistan", desc: "International program empowering girls through technology and entrepreneurship" },
+          { name: "GoViral", desc: "International program for youth engagement and social impact" }
+        ],
+        ru: [
+          { name: "Мümкинчилик дуньяси", desc: "Молодёжная организация по профориентации, карьерному консультированию и развитию надпрофессиональных навыков в Туркменистане" },
+          { name: "TechnovationGirls Turkmenistan", desc: "Международная программа, вдохновляющая девушек через технологии и предпринимательство" },
+          { name: "GoViral", desc: "Международная программа молодёжного вовлечения и социального воздействия" }
+        ]
+      }
     },
     "begench-rejepov": {
       role:     { en: "Startup Founder", ru: "Основатель стартапов" },
@@ -194,7 +207,7 @@ const I18N = {
       }
     },
     "gayane-israyelyan": {
-      role:     { en: "Creative", ru: "Креативщик" },
+      role:     { en: "Projects Associate, British Embassy", ru: "Проектный сотрудник, Посольство Великобритании" },
       bio:      { en: "Gayane Israyelyan is a creative professional contributing to the growing creative community in Central Asia.", ru: "Гаяне Исраелян — креативный профессионал, вносящая вклад в растущее творческое сообщество Центральной Азии." },
       skills:   { en: ["Creative", "Digital Media"], ru: ["Креатив", "Цифровые медиа"] },
       projects: { en: [], ru: [] }

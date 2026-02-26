@@ -64,21 +64,22 @@ const team = [
   {
     id: "kemal-babayev",
     name: "Kemal Babayev",
-    role: "Filmmaker / 3D Artist / AI Creator",
+    role: "Cinematographer & Director / Head of 2D/3D Animation, Studio22",
     org: "Studio22",
     location: "Turkmenistan",
     avatar: "images/kemal-avatar.jpg",
     color: "#FF5722",
-    bio: "Kemal Babayev is a multidisciplinary creator at Studio22, working across filmmaking, 3D visualization, and AI-generated art. His work pushes the boundaries of visual storytelling in Central Asia.",
-    skills: ["Filmmaking", "3D Art", "AI Art", "Visual Effects", "Creative Direction"],
+    bio: "Cinematographer, director, 3D generalist, and AI content creator. Works on full-cycle commercial projects: from concept and production to final delivery with graphics and neural networks. Heads the 2D/3D animation department at Studio22, leading a team of talented artists, animators, and technical specialists. Studio22 is a full-cycle creative agency from Turkmenistan.",
+    skills: ["Cinematography", "Directing", "3D Animation", "2D Animation", "AI Content", "Neural Networks"],
     social: {
       instagram: "https://instagram.com/ai_kema",
       instagram2: "https://instagram.com/studio22_tm",
       email: "kemal.babayew@gmail.com"
     },
     projects: [
-      { name: "Studio22", desc: "Creative studio for film production, 3D visualization, and digital art" },
-      { name: "AI Art Explorations", desc: "Generating art and visuals using AI tools and creative workflows" }
+      { name: "Studio22", desc: "Full-cycle creative agency bridging Central Asian culture with AI and high-quality 2D/3D animation" },
+      { name: "Goshalar", desc: "First animated series in Turkmenistan about modern secular life (12+) — two childhood friends reuniting to face life's challenges together" },
+      { name: "Paylash", desc: "Educational animated character for preschoolers — teaching through play and empathy, with merchandising potential" }
     ]
   },
   {
@@ -116,8 +117,8 @@ const team = [
     location: "Turkmenistan",
     avatar: "images/vasiliy-avatar.jpg",
     color: "#4CAF50",
-    bio: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering branding, design, and creative strategy for clients across Turkmenistan and Central Asia.",
-    skills: ["Branding", "Creative Strategy", "Design", "Agency Management", "Marketing"],
+    bio: "Vasiliy Andronov is the founder of Jam Creative Agency, delivering creative strategy and marketing solutions for clients across Turkmenistan and Central Asia.",
+    skills: ["Creative Strategy", "Agency Management", "Marketing", "Content Production"],
     social: { instagram: "https://instagram.com/jam_tm_creative" },
     portfolio: [
       "images/portfolio/vasiliy/1.jpg",
@@ -126,7 +127,7 @@ const team = [
       "images/portfolio/vasiliy/4.jpg"
     ],
     projects: [
-      { name: "Jam Creative Agency", desc: "Full-service creative agency specializing in branding, design, and marketing strategy" }
+      { name: "Jam Creative Agency", desc: "Creative agency specializing in marketing strategy and content production" }
     ]
   },
   {
@@ -165,15 +166,23 @@ const team = [
   {
     id: "alexandra-ahmedova",
     name: "Aleksandra Ahmedova",
-    role: "Career Consultant & Trainer",
-    org: "Technovation",
+    role: "CEO, Mumkinchilik Dunyasi / Project Manager",
+    org: "Mumkinchilik Dunyasi",
     location: "Turkmenistan",
     avatar: "images/alexandra-avatar.jpg",
     color: "#E040FB",
-    bio: "Aleksandra Ahmedova is a career orientation specialist, trainer, and career consultant helping people find their professional path.",
-    skills: ["Career Consulting", "Training", "Career Orientation", "Coaching"],
-    social: {},
-    projects: []
+    bio: "CEO of Mumkinchilik Dunyasi, a youth organization whose mission is to implement career orientation, career consulting, and develop soft skills among Turkmen youth. Project manager of international programs TechnovationGirls Turkmenistan and GoViral. Active participant in social initiatives. Certified trainer and mentor of the startup ecosystem.",
+    skills: ["Career Consulting", "Youth Development", "Project Management", "Startup Mentoring", "Training"],
+    social: {
+      instagram: "https://instagram.com/sanechkamodern",
+      instagram2: "https://instagram.com/mumkinchilik.dunyasi",
+      instagram3: "https://instagram.com/modern_profcareer"
+    },
+    projects: [
+      { name: "Mumkinchilik Dunyasi", desc: "Youth organization for career orientation, career consulting, and soft skills development in Turkmenistan" },
+      { name: "TechnovationGirls Turkmenistan", desc: "International program empowering girls through technology and entrepreneurship" },
+      { name: "GoViral", desc: "International program for youth engagement and social impact" }
+    ]
   },
   {
     id: "begench-rejepov",
@@ -200,8 +209,8 @@ const team = [
   {
     id: "gayane-israyelyan",
     name: "Gayane Israyelyan",
-    role: "Creative",
-    org: "",
+    role: "Projects Associate, British Embassy",
+    org: "British Embassy in Ashgabat",
     location: "Turkmenistan",
     avatar: "images/gayane-avatar.jpg",
     color: "#F44336",
@@ -244,6 +253,7 @@ function socialHTML(s) {
   const icons = [];
   if (s.instagram) icons.push(`<a href="${s.instagram}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>`);
   if (s.instagram2) icons.push(`<a href="${s.instagram2}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>`);
+  if (s.instagram3) icons.push(`<a href="${s.instagram3}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>`);
   if (s.tiktok) icons.push(`<a href="${s.tiktok}" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>`);
   if (s.linkedin) icons.push(`<a href="${s.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`);
   if (s.email) icons.push(`<a href="mailto:${s.email}" aria-label="Email"><i class="fas fa-envelope"></i></a>`);
