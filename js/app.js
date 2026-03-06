@@ -632,7 +632,7 @@ function applyTranslations(lang) {
   applyStaticTranslations(lang);
   renderCards();
   renderHeritage();
-  renderProgramme(lang);
+  renderEvents(lang);
   document.title = (I18N.ui["page.title"][lang] || I18N.ui["page.title"].en);
   // Re-render open modal
   const modal = document.getElementById("member-modal");
@@ -653,20 +653,190 @@ function toggleLang() {
   setLang(getLang() === "en" ? "ru" : "en");
 }
 
-// --- Programme Timeline Render ---
-function renderProgramme(lang) {
-  const el = document.getElementById("programme-timeline");
-  if (!el || !I18N.programme) return;
-  el.innerHTML = I18N.programme.map(item => `
-    <div class="tl-node reveal${item.highlight ? ' highlight' : ''}">
-      <div class="tl-time">${item.time}</div>
-      <div class="tl-title">${item.title[lang] || item.title.en}</div>
-    </div>
-  `).join("");
-  // Re-observe new reveal elements
-  if (window._revealObserver) {
-    el.querySelectorAll('.reveal').forEach(r => window._revealObserver.observe(r));
+// --- Events / Programme — 3D Cylinder Drum ---
+let _activeEventIdx = 0;
+const _drumAngleStep = 30;  // degrees between items — smaller = more visible at once
+const _drumRadius = 380;    // px — large radius so items spread wide
+
+function renderEvents(lang) {
+  const tabsEl = document.getElementById("event-tabs");
+  const panelsEl = document.getElementById("tab-panels");
+  if (!tabsEl || !panelsEl || !I18N.events) return;
+
+  const events = I18N.events;
+  const infoLabel = lang === "ru" ? "Инфо" : "Info";
+  const totalItems = events.length + 1;
+
+  // Auto-select on first render: check URL hash for deep link, else pick nearest event
+  if (!tabsEl.dataset.init) {
+    const hash = window.location.hash;
+    const parts = hash.replace('#','').split('/');
+    let resolved = false;
+    if (parts[0] === 'programme' && parts[1]) {
+      if (parts[1] === 'info') {
+        _activeEventIdx = events.length;
+        resolved = true;
+      } else {
+        const iso = slugToISO(parts[1]);
+        const idx = events.findIndex(e => e.date === iso);
+        if (idx !== -1) { _activeEventIdx = idx; resolved = true; }
+      }
+    }
+    if (!resolved) {
+      const today = new Date().toISOString().slice(0, 10);
+      let autoIdx = events.findIndex(e => e.date >= today);
+      if (autoIdx === -1) autoIdx = events.length - 1;
+      _activeEventIdx = autoIdx;
+    }
+    tabsEl.dataset.init = "1";
   }
+
+  // Build track
+  let track = tabsEl.querySelector(".event-tabs-track");
+  if (!track) {
+    track = document.createElement("div");
+    track.className = "event-tabs-track";
+    tabsEl.innerHTML = "";
+    tabsEl.appendChild(track);
+  }
+
+  // Render items placed on cylinder surface
+  track.innerHTML = "";
+  for (let i = 0; i < totalItems; i++) {
+    const btn = document.createElement("button");
+    btn.className = "event-tab";
+    btn.dataset.idx = i;
+    btn.setAttribute("data-active", i === _activeEventIdx ? "1" : "0");
+
+    if (i < events.length) {
+      const ev = events[i];
+      btn.innerHTML = `${ev.label[lang] || ev.label.en}<span class="tab-label">${ev.title[lang] || ev.title.en}</span>`;
+    } else {
+      btn.innerHTML = `<i class="fas fa-envelope" style="font-size:.85em"></i> ${infoLabel}`;
+    }
+
+    // Place on cylinder: rotateY then push out along Z axis
+    const angle = i * _drumAngleStep;
+    btn.style.transform = `rotateY(${angle}deg) translateZ(${_drumRadius}px)`;
+
+    btn.addEventListener("click", () => {
+      const idx = parseInt(btn.dataset.idx, 10);
+      if (idx === _activeEventIdx) return;
+      _activeEventIdx = idx;
+      spinDrum(getLang());
+    });
+
+    track.appendChild(btn);
+  }
+
+  // Rotate track to center active item
+  spinDrum(lang, false);
+}
+
+function spinDrum(lang, animate) {
+  const tabsEl = document.getElementById("event-tabs");
+  const track = tabsEl ? tabsEl.querySelector(".event-tabs-track") : null;
+  if (!track) return;
+
+  const rotation = -_activeEventIdx * _drumAngleStep;
+  if (animate === false) {
+    track.style.transition = "none";
+    track.style.transform = `rotateY(${rotation}deg)`;
+    track.offsetHeight; // force reflow
+    track.style.transition = "";
+  } else {
+    track.style.transform = `rotateY(${rotation}deg)`;
+  }
+
+  // Update active data attribute
+  track.querySelectorAll(".event-tab").forEach(btn => {
+    btn.setAttribute("data-active", parseInt(btn.dataset.idx) === _activeEventIdx ? "1" : "0");
+  });
+
+  // Update URL hash with active event date slug
+  const evts = I18N.events;
+  const slug = _activeEventIdx < evts.length ? dateSlug(evts[_activeEventIdx].date) : 'info';
+  history.replaceState(null, '', '#programme/' + slug);
+
+  // Fade-swap panel content
+  fadePanelTo(lang);
+}
+
+// Fade out current panel, swap content, fade in new
+function fadePanelTo(lang) {
+  const panelsEl = document.getElementById("tab-panels");
+  if (!panelsEl) return;
+  const existing = panelsEl.querySelector(".tab-panel");
+
+  if (existing && !existing.classList.contains("fade-out")) {
+    existing.classList.add("fade-out");
+    let swapped = false;
+    function doSwap() {
+      if (swapped) return;
+      swapped = true;
+      insertPanel(panelsEl, lang);
+    }
+    existing.addEventListener("transitionend", doSwap, { once: true });
+    setTimeout(doSwap, 450); // safety fallback
+  } else if (!existing) {
+    insertPanel(panelsEl, lang);
+  }
+}
+
+function insertPanel(panelsEl, lang) {
+  const html = buildPanelHTML(lang);
+  panelsEl.innerHTML = `<div class="tab-panel fade-in">${html}</div>`;
+  // Re-observe reveal elements
+  if (window._revealObserver) {
+    panelsEl.querySelectorAll('.reveal').forEach(r => window._revealObserver.observe(r));
+  }
+  // Wire up info send button if present
+  const sendBtn = document.getElementById("info-send");
+  if (sendBtn) {
+    sendBtn.addEventListener("click", () => {
+      const body = encodeURIComponent(document.getElementById("info-textarea").value);
+      const subject = encodeURIComponent("У меня предложение по проведению мероприятия");
+      window.location.href = `mailto:extramikeme@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+}
+
+function buildPanelHTML(lang) {
+  const events = I18N.events;
+  const ui = I18N.ui;
+
+  // Info tab
+  if (_activeEventIdx === events.length) {
+    return `
+      <div class="info-panel">
+        <h3>${ui["info.title"][lang] || ui["info.title"].en}</h3>
+        <p>${ui["info.desc"][lang] || ui["info.desc"].en}</p>
+        <textarea id="info-textarea" placeholder="${ui["info.placeholder"][lang] || ui["info.placeholder"].en}"></textarea>
+        <button class="btn-send" id="info-send">${ui["info.send"][lang] || ui["info.send"].en}</button>
+      </div>`;
+  }
+
+  // Event panel
+  const ev = events[_activeEventIdx];
+  const subtitle = `${ev.title[lang] || ev.title.en} &middot; ${ev.subtitle[lang] || ev.subtitle.en}`;
+
+  if (ev.programme && ev.programme.length) {
+    return `
+      <p class="event-subtitle">${subtitle}</p>
+      <div class="timeline">
+        ${ev.programme.map(item => `
+          <div class="tl-node reveal${item.highlight ? ' highlight' : ''}">
+            <div class="tl-time">${item.time}</div>
+            <div class="tl-title">${item.title[lang] || item.title.en}</div>
+          </div>
+        `).join("")}
+      </div>`;
+  }
+
+  const tbd = lang === "ru" ? "Программа будет объявлена позже" : "Programme to be announced";
+  return `
+    <p class="event-subtitle">${subtitle}</p>
+    <div class="programme-empty">${tbd}</div>`;
 }
 
 // --- Scroll Reveal (IntersectionObserver) ---
@@ -882,3 +1052,78 @@ function renderProgramme(lang) {
   if (label) label.textContent = lang === "en" ? "RU" : "EN";
   applyTranslations(lang);
 })();
+
+// --- URL Deep-Linking ---
+// Convert "2026-02-28" → "28.02.2026" for URL slugs
+function dateSlug(iso) { return iso.split('-').reverse().join('.'); }
+// Convert "28.02.2026" → "2026-02-28" for lookup
+function slugToISO(slug) { return slug.split('.').reverse().join('-'); }
+
+// Suppress flag — prevents scroll-spy from overwriting hash during smooth scrolls
+let _scrollSpySuppressed = false;
+function suppressScrollSpy(ms) {
+  _scrollSpySuppressed = true;
+  setTimeout(() => { _scrollSpySuppressed = false; }, ms || 1200);
+}
+
+// Scroll-spy: update URL hash as user scrolls between sections
+(function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id], header[id]');
+  let currentHash = window.location.hash || '';
+  const visibleRatios = new Map();
+
+  const observer = new IntersectionObserver((entries) => {
+    if (_scrollSpySuppressed) return;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        visibleRatios.set(entry.target.id, entry.intersectionRatio);
+      } else {
+        visibleRatios.delete(entry.target.id);
+      }
+    });
+    // Pick section with highest intersection ratio
+    let bestId = null, bestRatio = 0;
+    for (const [id, ratio] of visibleRatios) {
+      if (ratio > bestRatio) { bestRatio = ratio; bestId = id; }
+    }
+    if (!bestId) return;
+    let hash;
+    if (bestId === 'programme') {
+      const events = I18N.events;
+      const slug = _activeEventIdx < events.length
+        ? dateSlug(events[_activeEventIdx].date) : 'info';
+      hash = '#programme/' + slug;
+    } else {
+      hash = '#' + bestId;
+    }
+    if (hash !== currentHash) {
+      currentHash = hash;
+      history.replaceState(null, '', hash);
+    }
+  }, { threshold: [0.1, 0.3, 0.5] });
+  sections.forEach(s => observer.observe(s));
+})();
+
+// Handle hashchange (browser back/forward, external link clicks)
+window.addEventListener('hashchange', () => {
+  suppressScrollSpy(1200);
+  const parts = location.hash.replace('#','').split('/');
+  if (parts[0] === 'programme' && parts[1]) {
+    const events = I18N.events;
+    let idx = parts[1] === 'info' ? events.length
+      : events.findIndex(e => e.date === slugToISO(parts[1]));
+    if (idx === -1 || idx === _activeEventIdx) return;
+    _activeEventIdx = idx;
+    spinDrum(getLang());
+  }
+  const target = document.getElementById(parts[0]);
+  if (target) target.scrollIntoView({ behavior: 'smooth' });
+});
+
+// On page load — scroll to deep-linked section
+if (window.location.hash) {
+  suppressScrollSpy(1500);
+  const root = window.location.hash.replace('#','').split('/')[0];
+  const el = document.getElementById(root);
+  if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
+}

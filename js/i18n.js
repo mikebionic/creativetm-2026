@@ -49,9 +49,12 @@ const I18N = {
     "stats.countries":   { en: "Countries at CCA", ru: "Стран на CCA" },
     "stats.heritage":    { en: "Years of Creative Heritage", ru: "Лет творческого наследия" },
 
-    // Programme
-    "programme.title":    { en: "CCA 2026 Programme", ru: "Программа CCA 2026" },
-    "programme.subtitle": { en: "February 28, 2026 · School 21, Tashkent", ru: "28 февраля 2026 · School 21, Ташкент" },
+    // Programme / Events
+    "programme.title":    { en: "Programme", ru: "Программа" },
+    "info.title":         { en: "Propose an Event", ru: "Предложите мероприятие" },
+    "info.desc":          { en: "Have an idea for a creative event? Tell us about it and we'll get in touch!", ru: "Есть идея для креативного мероприятия? Расскажите нам, и мы свяжемся с вами!" },
+    "info.placeholder":   { en: "Describe your event idea...", ru: "Опишите вашу идею мероприятия..." },
+    "info.send":          { en: "Send Proposal", ru: "Отправить предложение" },
 
     // SVG Map
     "map.ashgabat":    { en: "Ashgabat", ru: "Ашхабад" },
@@ -220,18 +223,47 @@ const I18N = {
     }
   },
 
-  programme: [
-    { time: "10:00", title: { en: "Press Conference", ru: "Пресс-конференция" }, highlight: false },
-    { time: "11:00", title: { en: "Opening Remarks", ru: "Вступительное слово" }, highlight: false },
-    { time: "11:10", title: { en: "CCA Digest — 5-min presentations per country (incl. Turkmenistan)", ru: "CCA Дайджест — 5-минутные презентации от каждой страны (вкл. Туркменистан)" }, highlight: true },
-    { time: "12:00", title: { en: "Cities Rating Hackathon Results", ru: "Результаты хакатона рейтинга городов" }, highlight: false },
-    { time: "12:30", title: { en: "Speed Dating — Professional Networking", ru: "Speed Dating — профессиональный нетворкинг" }, highlight: false },
-    { time: "13:30", title: { en: "Lunch + Open Mic", ru: "Обед + Open Mic" }, highlight: false },
-    { time: "14:45", title: { en: "Keynote: John Newbigin", ru: "Кейноут: Джон Ньюбигин" }, highlight: false },
-    { time: "15:00", title: { en: "Panel 1: Invisible Infrastructure of Creative Cities", ru: "Панель 1: Невидимая инфраструктура креативных городов" }, highlight: false },
-    { time: "16:00", title: { en: "Panel 2: Speaking the Language of Values", ru: "Панель 2: Говорить на языке ценностей" }, highlight: false },
-    { time: "17:00", title: { en: "Panel 3: Gen-Next Cities: Who Creates Our Future?", ru: "Панель 3: Города нового поколения: кто создаёт наше будущее?" }, highlight: false },
-    { time: "18:00", title: { en: "Closing", ru: "Закрытие" }, highlight: false }
+  events: [
+    {
+      id: "cca-2026",
+      date: "2026-02-28",
+      label: { en: "Feb 28", ru: "28 фев" },
+      title: { en: "CCA 2026 Forum", ru: "Форум CCA 2026" },
+      subtitle: { en: "School 21, Tashkent", ru: "School 21, Ташкент" },
+      programme: [
+        { time: "10:00", title: { en: "Press Conference", ru: "Пресс-конференция" }, highlight: false },
+        { time: "11:00", title: { en: "Opening Remarks", ru: "Вступительное слово" }, highlight: false },
+        { time: "11:10", title: { en: "CCA Digest — 5-min presentations per country (incl. Turkmenistan)", ru: "CCA Дайджест — 5-минутные презентации от каждой страны (вкл. Туркменистан)" }, highlight: true },
+        { time: "12:00", title: { en: "Cities Rating Hackathon Results", ru: "Результаты хакатона рейтинга городов" }, highlight: false },
+        { time: "12:30", title: { en: "Speed Dating — Professional Networking", ru: "Speed Dating — профессиональный нетворкинг" }, highlight: false },
+        { time: "13:30", title: { en: "Lunch + Open Mic", ru: "Обед + Open Mic" }, highlight: false },
+        { time: "14:45", title: { en: "Keynote: John Newbigin", ru: "Кейноут: Джон Ньюбигин" }, highlight: false },
+        { time: "15:00", title: { en: "Panel 1: Invisible Infrastructure of Creative Cities", ru: "Панель 1: Невидимая инфраструктура креативных городов" }, highlight: false },
+        { time: "16:00", title: { en: "Panel 2: Speaking the Language of Values", ru: "Панель 2: Говорить на языке ценностей" }, highlight: false },
+        { time: "17:00", title: { en: "Panel 3: Gen-Next Cities: Who Creates Our Future?", ru: "Панель 3: Города нового поколения: кто создаёт наше будущее?" }, highlight: false },
+        { time: "18:00", title: { en: "Closing", ru: "Закрытие" }, highlight: false }
+      ]
+    },
+    {
+      id: "march-meetup",
+      date: "2026-03-13",
+      label: { en: "Mar 13", ru: "13 мар" },
+      title: { en: "Creative Space Mason — Post-Forum Meetup", ru: "Creative Space Mason — Встреча после форума" },
+      subtitle: { en: "Creative Space Mason, Ashgabat", ru: "Creative Space Mason, Ашхабад" },
+      programme: [
+        { time: "16:30", title: { en: "Welcome & Networking Board", ru: "Встреча гостей и доска нетворкинга" }, highlight: false },
+        { time: "16:35", title: { en: "What Is the Creative Economy & Why It Matters", ru: "Что такое креативная экономика и зачем она нужна" }, highlight: false },
+        { time: "16:40", title: { en: "History of the Creative Economy Movement", ru: "История движения креативной экономики" }, highlight: false },
+        { time: "16:45", title: { en: "Creative Space Mason: Mission, Goals & Team", ru: "Creative Space Mason: Миссия, цели и команда" }, highlight: true },
+        { time: "16:55", title: { en: "Forum Digest: Networking, People & Contacts", ru: "Дайджест форума: Нетворкинг, люди и контакты" }, highlight: false },
+        { time: "17:00", title: { en: "Forum Digest: Events & Highlights", ru: "Дайджест форума: Ивенты и яркие моменты" }, highlight: false },
+        { time: "17:05", title: { en: "Forum Digest: Hackathon Experience", ru: "Дайджест форума: Опыт хакатона" }, highlight: false },
+        { time: "17:10", title: { en: "Forum Digest: Inspiration & Impressions", ru: "Дайджест форума: Вдохновение и впечатления" }, highlight: false },
+        { time: "17:15", title: { en: "Opportunities: Grants, Courses & Westminster Master's", ru: "Возможности: Гранты, курсы и магистратура Westminster" }, highlight: true },
+        { time: "17:20", title: { en: "Annual Events, Free Courses & CCA Telegram Channel", ru: "Ежегодные мероприятия, бесплатные курсы и Telegram-канал CCA" }, highlight: false },
+        { time: "17:25", title: { en: "Networking & Collaboration Board Results", ru: "Результаты доски нетворкинга и коллабораций" }, highlight: false }
+      ]
+    }
   ],
 
   heritage: [
