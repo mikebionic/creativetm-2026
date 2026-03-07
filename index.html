@@ -29,6 +29,7 @@
         <a href="#programme" data-i18n="nav.programme">Programme</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#team" data-i18n="nav.team">Team</a>
+        <a href="#" class="nav-resources-btn" onclick="event.preventDefault();toggleResourcesPanel()" data-i18n="nav.resources">Resources</a>
         <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language">
           <span class="lang-label">RU</span>
         </button>
@@ -152,6 +153,8 @@
         <path class="country-outline" d="M358.0,349.5 L355.1,323.6 L330.8,322.5 L293.5,295.2 L267.5,291.8 L231.4,276.2 L208.2,273.3 L193.9,279.1 L172.1,278.2 L148.9,295.8 L120.3,301.8 L114.2,280.0 L118.9,247.7 L93.5,237.3 L101.9,216.2 L80.2,214.4 L87.5,188.4 L118.2,196.0 L146.9,186.1 L123.1,167.6 L113.8,150.0 L87.5,157.8 L84.2,180.4 L74.0,160.4 L88.4,150.2 L125.4,143.8 L147.5,152.4 L170.3,176.6 L187.0,175.1 L223.8,174.6 L218.4,159.1 L246.3,148.5 L273.8,130.6 L317.7,146.9 L321.2,171.5 L333.7,177.8 L368.9,176.4 L379.9,182.0 L395.9,213.8 L433.2,235.0 L454.5,249.6 L488.6,264.7 L531.9,277.9 L531.0,296.7 L521.2,295.8 L505.8,287.5 L500.7,298.5 L473.2,304.5 L466.7,329.1 L448.4,338.5 L422.6,343.2 L415.8,357.1 L391.2,361.2 L358.0,349.5 Z"/>
         <!-- Uzbekistan -->
         <path class="country-outline" d="M531.0,296.7 L531.9,277.9 L488.6,264.7 L454.5,249.6 L433.2,235.0 L395.9,213.8 L379.9,182.0 L368.9,176.4 L333.7,177.8 L321.2,171.5 L317.7,146.9 L273.8,130.6 L246.3,148.5 L218.4,159.1 L223.8,174.6 L187.0,175.1 L185.7,61.4 L269.7,43.2 L275.8,45.8 L326.3,67.9 L353.0,79.6 L384.1,107.4 L422.4,102.9 L478.3,100.5 L517.3,123.0 L514.9,153.9 L530.8,154.1 L537.4,179.4 L578.9,180.4 L587.8,195.0 L600.0,194.8 L614.2,172.7 L657.2,151.2 L675.9,145.5 L685.6,148.6 L658.3,168.6 L682.3,180.2 L705.5,172.5 L744.2,188.7 L702.4,210.9 L677.6,207.9 L664.2,208.7 L659.5,200.1 L666.3,185.8 L622.7,193.0 L612.3,212.8 L596.8,229.8 L569.6,228.4 L561.2,241.9 L585.1,249.3 L592.1,272.2 L573.8,303.4 L549.2,296.9 L531.0,296.7 Z"/>
+        <!-- Tajikistan (GeoJSON Natural Earth) -->
+        <path class="country-outline" d="M573.8,303.4 L592.1,272.2 L585.1,249.3 L561.2,241.9 L569.6,228.4 L596.8,229.8 L612.3,212.8 L622.7,193.0 L666.3,185.8 L659.5,200.1 L664.2,208.7 L677.6,207.9 L665.6,217.4 L630.2,212.2 L627.1,230.0 L662.4,227.6 L702.7,237.6 L764.3,232.9 L773.4,261.6 L784.2,258.5 L804.1,265.5 L802.9,277.5 L807.8,295.1 L774.0,295.1 L751.5,292.8 L731.1,306.7 L716.5,309.7 L705.1,316.2 L692.1,306.1 L695.2,280.1 L685.3,278.7 L688.9,269.2 L671.1,262.2 L657.0,273.0 L653.6,285.4 L648.5,290.0 L628.9,289.3 L618.4,303.5 L607.3,297.5 L583.6,307.4 Z"/>
         <!-- Route arc Ashgabat → Tashkent -->
         <path class="route-line" d="M265.7,278.6 C350,100 550,60 621.1,175.0" stroke-dasharray="700" stroke-dashoffset="700"/>
         <!-- Cities — radius proportional to population -->
@@ -202,6 +205,13 @@
         <circle class="city-pulse city-pulse-sm" cx="587" cy="114" r="4"/>
         <circle class="city-dot city-dot-kz" cx="978" cy="-106" r="5"/>
         <circle class="city-pulse city-pulse-sm" cx="978" cy="-106" r="5"/>
+        <!-- Tajikistan -->
+        <circle class="city-dot city-dot-tj" cx="604.5" cy="259.9" r="7"/>
+        <circle class="city-pulse" cx="604.5" cy="259.9" r="7"/>
+        <circle class="city-dot city-dot-tj" cx="632.3" cy="206.7" r="4"/>
+        <circle class="city-pulse city-pulse-sm" cx="632.3" cy="206.7" r="4"/>
+        <circle class="city-dot city-dot-tj" cx="694.2" cy="291.6" r="3"/>
+        <circle class="city-pulse city-pulse-sm" cx="694.2" cy="291.6" r="3"/>
         <!-- Kyrgyzstan secondary -->
         <circle class="city-dot city-dot-kg" cx="918" cy="139" r="3"/>
         <circle class="city-pulse city-pulse-sm" cx="918" cy="139" r="3"/>
@@ -233,11 +243,16 @@
         <text class="map-label-sm" x="991" y="-111">Semey</text>
         <!-- KG secondary label -->
         <text class="map-label-sm" x="931" y="134">Karakol</text>
+        <!-- TJ labels -->
+        <text class="map-label" x="568" y="257" data-i18n="map.dushanbe" text-anchor="end">Dushanbe</text>
+        <text class="map-label-sm" x="645" y="202">Khujand</text>
+        <text class="map-label-sm" x="707" y="288">Khorog</text>
         <!-- Country labels -->
         <text class="country-label" x="280" y="250" text-anchor="middle">Turkmenistan</text>
         <text class="country-label" x="440" y="155" text-anchor="middle">Uzbekistan</text>
         <text class="country-label" x="550" y="-60" text-anchor="middle">Kazakhstan</text>
         <text class="country-label" x="840" y="165" text-anchor="middle">Kyrgyzstan</text>
+        <text class="country-label" x="730" y="280" text-anchor="middle">Tajikistan</text>
       </svg>
     </div>
   </section>
@@ -312,10 +327,53 @@
     </div>
   </section>
 
+  <!-- Resources Panel (slide-in overlay) -->
+  <div class="resources-overlay" id="resources-overlay" onclick="if(event.target===this)toggleResourcesPanel()"></div>
+  <aside class="resources-panel" id="resources-panel">
+    <div class="resources-header">
+      <h2 data-i18n="resources.title">Resources</h2>
+      <button class="resources-close" onclick="toggleResourcesPanel()" aria-label="Close">&times;</button>
+    </div>
+    <div class="resources-body" id="resources-body">
+      <!-- Main view: resource cards -->
+      <div class="resources-grid" id="resources-grid">
+        <div class="resource-card" onclick="showResourceDetail('keirsey')">
+          <div class="resource-icon"><i class="fas fa-brain"></i></div>
+          <h3>Определитель темперамента Кейрси</h3>
+          <p class="resource-author">David Keirsey (1978) · Б. В. Овчинников и др. (1994)</p>
+          <p class="resource-desc">Опросник для изучения типичных способов поведения и личностных особенностей. 70 вопросов.</p>
+        </div>
+      </div>
+      <!-- Detail views -->
+      <div class="resource-detail" id="resource-detail-keirsey" style="display:none">
+        <button class="resource-back" onclick="hideResourceDetail()"><i class="fas fa-arrow-left"></i> <span data-i18n="resources.back">Back</span></button>
+        <h3>Определитель темперамента Кейрси</h3>
+        <p><strong>Автор:</strong> David Keirsey (1978)</p>
+        <p><strong>Адаптация:</strong> Б. В. Овчинников и др. (1994)</p>
+        <h4>Инструкция</h4>
+        <p>Вам предлагается опросник для изучения типичных способов поведения и личностных особенностей.</p>
+        <p>Опросник состоит из 70 утверждений (вопросов), каждое из которых имеет два продолжения (ответа).</p>
+        <p>Подчеркиваем, что все ответы равноценны, правильных или неправильных среди них нет.</p>
+        <p><strong>Ваша задача:</strong></p>
+        <ul>
+          <li>прочесть каждое из утверждений вместе с двумя его возможными продолжениями;</li>
+          <li>выбрать то продолжение, которое вам свойственно в большинстве жизненных ситуаций.</li>
+        </ul>
+        <p>Отвечайте откровенно, подолгу не задумываясь над ответами.</p>
+        <a href="https://psytests.org/typo/keirsey-run.html" target="_blank" rel="noopener" class="resource-link-btn"><i class="fas fa-external-link-alt"></i> Пройти тест</a>
+      </div>
+    </div>
+  </aside>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p data-i18n="footer.text">Creative Turkmenistan 2026 &middot; Creative Economy Forum &middot; Uzbekistan</p>
+      <div class="footer-contacts">
+        <span><i class="fas fa-phone"></i> +993 65 859874</span>
+        <span><a href="https://instagram.com/creative.turkmenistan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @creative.turkmenistan</a></span>
+        <span><i class="fas fa-map-marker-alt"></i> Ashgabat, Turkmenistan</span>
+      </div>
     </div>
   </footer>
 

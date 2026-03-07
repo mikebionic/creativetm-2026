@@ -1127,3 +1127,35 @@ if (window.location.hash) {
   const el = document.getElementById(root);
   if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
 }
+
+// --- Resources Panel ---
+function toggleResourcesPanel() {
+  const panel = document.getElementById('resources-panel');
+  const overlay = document.getElementById('resources-overlay');
+  const isOpen = panel.classList.toggle('open');
+  overlay.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+  // Close mobile nav if open
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) navLinks.classList.remove('open');
+  // Reset to grid view when closing
+  if (!isOpen) hideResourceDetail();
+}
+
+function showResourceDetail(id) {
+  document.getElementById('resources-grid').style.display = 'none';
+  document.getElementById('resource-detail-' + id).style.display = 'block';
+}
+
+function hideResourceDetail() {
+  document.getElementById('resources-grid').style.display = '';
+  document.querySelectorAll('.resource-detail').forEach(el => el.style.display = 'none');
+}
+
+// Close resources panel on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const panel = document.getElementById('resources-panel');
+    if (panel && panel.classList.contains('open')) toggleResourcesPanel();
+  }
+});

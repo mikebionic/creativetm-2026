@@ -24,6 +24,9 @@ const I18N = {
     "about.card4.desc":  { en: "Branding, design, and creative strategy", ru: "Брендинг, дизайн и креативная стратегия" },
     "nav.heritage":    { en: "Heritage", ru: "Наследие" },
     "nav.programme":   { en: "Programme", ru: "Программа" },
+    "nav.resources":   { en: "Resources", ru: "Полезное" },
+    "resources.title": { en: "Resources", ru: "Полезное" },
+    "resources.back":  { en: "Back", ru: "Назад" },
     "heritage.title":  { en: "Our Creativity Is Older Than It Seems", ru: "Наше творчество старше, чем кажется" },
     "heritage.subtitle": { en: "Look at a Turkmen carpet \u2014 every line is a code, every color a meaning. We didn\u2019t learn design \u2014 we inherited it.", ru: "Посмотрите на туркменский ковёр \u2014 каждая линия \u2014 это код, каждый цвет \u2014 смысл. Мы не учились дизайну \u2014 мы его унаследовали." },
     "heritage.footer": { en: "We are heirs to a culture that always valued precision, beauty, and meaning. That\u2019s exactly what the creative economy needs.", ru: "Мы \u2014 наследники культуры, которая всегда ценила точность, красоту и смысл. Именно это нужно креативной экономике." },
@@ -58,7 +61,8 @@ const I18N = {
 
     // SVG Map
     "map.ashgabat":    { en: "Ashgabat", ru: "Ашхабад" },
-    "map.tashkent":    { en: "Tashkent / School 21", ru: "Ташкент / School 21" }
+    "map.tashkent":    { en: "Tashkent / School 21", ru: "Ташкент / School 21" },
+    "map.dushanbe":    { en: "Dushanbe", ru: "Душанбе" }
   },
 
   team: {
@@ -248,13 +252,13 @@ const I18N = {
       id: "march-meetup",
       date: "2026-03-13",
       label: { en: "Mar 13", ru: "13 мар" },
-      title: { en: "Creative Space Mason — Post-Forum Meetup", ru: "Creative Space Mason — Встреча после форума" },
-      subtitle: { en: "Creative Space Mason, Ashgabat", ru: "Creative Space Mason, Ашхабад" },
+      title: { en: "Iş Nokady — Post-Forum Meetup", ru: "Iş Nokady — Встреча после форума" },
+      subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
       programme: [
         { time: "16:30", title: { en: "Welcome & Networking Board", ru: "Встреча гостей и доска нетворкинга" }, highlight: false },
         { time: "16:35", title: { en: "What Is the Creative Economy & Why It Matters", ru: "Что такое креативная экономика и зачем она нужна" }, highlight: false },
         { time: "16:40", title: { en: "History of the Creative Economy Movement", ru: "История движения креативной экономики" }, highlight: false },
-        { time: "16:45", title: { en: "Creative Space Mason: Mission, Goals & Team", ru: "Creative Space Mason: Миссия, цели и команда" }, highlight: true },
+        { time: "16:45", title: { en: "Iş Nokady: Mission, Goals & Team", ru: "Iş Nokady: Миссия, цели и команда" }, highlight: true },
         { time: "16:55", title: { en: "Forum Digest: Networking, People & Contacts", ru: "Дайджест форума: Нетворкинг, люди и контакты" }, highlight: false },
         { time: "17:00", title: { en: "Forum Digest: Events & Highlights", ru: "Дайджест форума: Ивенты и яркие моменты" }, highlight: false },
         { time: "17:05", title: { en: "Forum Digest: Hackathon Experience", ru: "Дайджест форума: Опыт хакатона" }, highlight: false },
