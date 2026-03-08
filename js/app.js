@@ -1128,6 +1128,57 @@ if (window.location.hash) {
   if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
 }
 
+// --- Gallery Overlay ---
+const _galleryPlaceholders = [
+  { cls: "tall", gradient: "linear-gradient(135deg, #1a73e8, #e91e63)" },
+  { cls: "",     gradient: "linear-gradient(135deg, #4CAF50, #2196F3)" },
+  { cls: "wide", gradient: "linear-gradient(135deg, #FF5722, #FF9800)" },
+  { cls: "",     gradient: "linear-gradient(135deg, #9C27B0, #E040FB)" },
+  { cls: "tall", gradient: "linear-gradient(135deg, #00BCD4, #1a73e8)" },
+  { cls: "",     gradient: "linear-gradient(135deg, #e91e63, #FF5722)" },
+  { cls: "wide", gradient: "linear-gradient(135deg, #607D8B, #9C27B0)" },
+  { cls: "",     gradient: "linear-gradient(135deg, #2196F3, #4CAF50)" },
+  { cls: "tall", gradient: "linear-gradient(135deg, #FF9800, #e91e63)" },
+  { cls: "",     gradient: "linear-gradient(135deg, #1a73e8, #00BCD4)" }
+];
+
+function renderGallery() {
+  const grid = document.getElementById("gallery-masonry");
+  if (!grid) return;
+  grid.innerHTML = _galleryPlaceholders.map((p, i) => `
+    <div class="gallery-card ${p.cls}">
+      <div class="gallery-placeholder" style="background:${p.gradient}">
+        <i class="fas fa-camera"></i>
+      </div>
+    </div>
+  `).join("");
+}
+
+function toggleGallery() {
+  const overlay = document.getElementById("gallery-overlay");
+  if (!overlay) return;
+  const isOpen = overlay.classList.toggle("open");
+  document.body.style.overflow = isOpen ? "hidden" : "";
+  // Close mobile nav if open
+  const navLinks = document.querySelector(".nav-links");
+  if (navLinks) navLinks.classList.remove("open");
+  // Render on first open
+  if (isOpen && !overlay.dataset.rendered) {
+    renderGallery();
+    overlay.dataset.rendered = "1";
+  }
+}
+
+// Close gallery on Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const overlay = document.getElementById("gallery-overlay");
+    if (overlay && overlay.classList.contains("open")) {
+      toggleGallery();
+    }
+  }
+});
+
 // --- Resources Panel ---
 function toggleResourcesPanel() {
   const panel = document.getElementById('resources-panel');

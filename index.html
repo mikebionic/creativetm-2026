@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Turkmenistan 2026</title>
-  <meta name="description" content="Turkmenistan's creative delegation for the Creative Economy Forum 2026 in Uzbekistan">
+  <meta name="description" content="Turkmenistan's creative community — filmmakers, AI artists, educators, and innovators">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css?v=1709853200">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -19,7 +19,7 @@
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#" class="nav-brand"><img src="images/logo.png" alt="Creative TM" class="nav-logo">Creative TM 2026</a>
+      <a href="#" class="nav-brand"><img src="images/logo.png" alt="Creative TM" class="nav-logo">Creative TM</a>
       <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -29,6 +29,7 @@
         <a href="#programme" data-i18n="nav.programme">Programme</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#team" data-i18n="nav.team">Team</a>
+        <a href="#" class="nav-gallery-btn" onclick="event.preventDefault();toggleGallery()" data-i18n="nav.gallery">Gallery</a>
         <a href="#" class="nav-resources-btn" onclick="event.preventDefault();toggleResourcesPanel()" data-i18n="nav.resources">Resources</a>
         <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language">
           <span class="lang-label">RU</span>
@@ -68,7 +69,7 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <img src="images/logo.png" alt="Creative TM Logo" class="hero-logo" id="hero-logo">
-      <p class="hero-label" data-i18n="hero.label">Creative Economy Forum 2026 &middot; Uzbekistan</p>
+      <p class="hero-label" data-i18n="hero.label">Creative Community &middot; Turkmenistan</p>
       <h1 data-i18n="hero.title">Creative Turkmenistan</h1>
       <p class="hero-slogan" data-i18n="hero.slogan">Creativity Without Borders</p>
       <a href="#team" class="btn-hero" data-i18n="hero.cta">Meet the Team</a>
@@ -260,10 +261,10 @@
   <!-- About Section -->
   <section class="section section-alt" id="about">
     <div class="container">
-      <h2 class="section-title" data-i18n="about.title">About the Delegation</h2>
+      <h2 class="section-title" data-i18n="about.title">About the Community</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p data-i18n-html="about.p1">Turkmenistan's creative delegation brings together a diverse group of innovators attending the <strong>Creative Economy Forum 2026</strong> in Uzbekistan.</p>
+          <p data-i18n-html="about.p1">Turkmenistan's creative community brings together filmmakers, AI artists, educators, and innovators &mdash; united by creativity and a shared vision for the future.</p>
           <p data-i18n-html="about.p2">Our team spans filmmaking, AI-generated art, digital education, and creative agency work &mdash; united by a shared vision of expanding Turkmenistan's presence in the global creative economy.</p>
           <p data-i18n-html="about.p3">From Studio22's cinematic productions to cutting-edge AI art, from TechWomen digital skills training to Jam Creative Agency's brand work, we represent the breadth and depth of Central Asian creativity.</p>
         </div>
@@ -317,7 +318,7 @@
         </div>
         <div class="stat-card reveal">
           <span class="stat-number" data-target="6">0</span>
-          <span class="stat-label" data-i18n="stats.countries">Countries at CCA</span>
+          <span class="stat-label" data-i18n="stats.countries">Countries in Central Asia</span>
         </div>
         <div class="stat-card reveal">
           <span class="stat-number" data-target="300" data-suffix="+">0</span>
@@ -365,14 +366,61 @@
     </div>
   </aside>
 
+  <!-- Gallery Overlay -->
+  <div class="gallery-overlay" id="gallery-overlay">
+    <div class="gallery-header">
+      <h2 data-i18n="gallery.title">Gallery</h2>
+      <button class="gallery-close" onclick="toggleGallery()" aria-label="Close">&times;</button>
+    </div>
+    <div class="gallery-masonry" id="gallery-masonry">
+      <!-- JS renders placeholder cards here -->
+    </div>
+  </div>
+
+  <!-- Partners Section -->
+  <section class="section partners-section" id="partners">
+    <div class="container">
+      <h2 class="section-title" data-i18n="partners.title">Partners &amp; Friends</h2>
+      <div class="partners-cloud">
+        <a href="https://www.britishcouncil.org/" target="_blank" rel="noopener" class="partner-logo" title="British Council"><img src="images/partners/british-council.svg" alt="British Council"></a>
+        <a href="https://studio22.media/" target="_blank" rel="noopener" class="partner-logo" title="Studio22"><img src="images/partners/studio22.png" alt="Studio22"></a>
+        <a href="https://www.ishnokady.com.tm/" target="_blank" rel="noopener" class="partner-logo" title="Iş Nokady"><img src="images/partners/ish-nokady.svg" alt="Iş Nokady"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us / CTA Section -->
+  <section class="section cta-section" id="join">
+    <div class="container">
+      <div class="cta-card">
+        <h2 data-i18n="cta.title">Join the Community</h2>
+        <p data-i18n="cta.subtitle">Follow us for events, opportunities, and creative collaborations</p>
+        <div class="cta-buttons">
+          <a href="https://instagram.com/creative.turkmenistan" target="_blank" rel="noopener" class="btn-cta btn-cta-ig"><i class="fab fa-instagram"></i> <span data-i18n="cta.instagram">Instagram</span></a>
+          <!-- <a href="https://t.me/creativetm" target="_blank" rel="noopener" class="btn-cta btn-cta-tg"><i class="fab fa-telegram"></i> <span data-i18n="cta.telegram">Telegram</span></a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p data-i18n="footer.text">Creative Turkmenistan 2026 &middot; Creative Economy Forum &middot; Uzbekistan</p>
-      <div class="footer-contacts">
-        <span><i class="fas fa-phone"></i> +993 65 859874</span>
-        <span><a href="https://instagram.com/creative.turkmenistan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @creative.turkmenistan</a></span>
-        <span><i class="fas fa-map-marker-alt"></i> Ashgabat, Turkmenistan</span>
+      <div class="footer-main">
+        <div class="footer-info">
+          <p data-i18n="footer.text">Creative Turkmenistan 2026 &middot; Ashgabat</p>
+          <div class="footer-contacts">
+            <span><a href="tel:+99365859874"><i class="fas fa-phone"></i> +993 65 859874</a></span>
+            <span><a href="https://instagram.com/creative.turkmenistan" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @creative.turkmenistan</a></span>
+            <span><i class="fas fa-map-marker-alt"></i> Ashgabat, Turkmenistan</span>
+          </div>
+        </div>
+        <div class="footer-qr">
+          <a href="https://instagram.com/creative.turkmenistan" target="_blank" rel="noopener" class="qr-link">
+            <img src="images/qr-instagram.svg" alt="QR Code — Instagram" class="qr-code">
+            <span class="qr-label" data-i18n="qr.label">Follow us</span>
+          </a>
+        </div>
       </div>
     </div>
   </footer>

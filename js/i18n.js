@@ -4,14 +4,14 @@ const I18N = {
     "nav.home":        { en: "Home", ru: "Главная" },
     "nav.team":        { en: "Team", ru: "Команда" },
     "nav.about":       { en: "About", ru: "О нас" },
-    "hero.label":      { en: "Creative Economy Forum 2026 \u00b7 Uzbekistan", ru: "Форум креативной экономики 2026 \u00b7 Узбекистан" },
+    "hero.label":      { en: "Creative Community \u00b7 Turkmenistan", ru: "Креативное сообщество \u00b7 Туркменистан" },
     "hero.title":      { en: "Creative Turkmenistan", ru: "Креативный Туркменистан" },
     "hero.slogan":     { en: "Creativity Without Borders", ru: "Творчество без границ" },
     "hero.cta":        { en: "Meet the Team", ru: "Познакомиться с командой" },
     "team.title":      { en: "Our Team", ru: "Наша команда" },
     "team.subtitle":   { en: "Filmmakers, AI creators, digital educators, and agency founders representing Turkmenistan\u2019s creative future.", ru: "Кинематографисты, AI-художники, цифровые педагоги и основатели агентств, представляющие креативное будущее Туркменистана." },
-    "about.title":     { en: "About the Delegation", ru: "О делегации" },
-    "about.p1":        { en: "Turkmenistan\u2019s creative delegation brings together a diverse group of innovators attending the <strong>Creative Economy Forum 2026</strong> in Uzbekistan.", ru: "Креативная делегация Туркменистана объединяет разнообразную группу новаторов, участвующих в <strong>Форуме креативной экономики 2026</strong> в Узбекистане." },
+    "about.title":     { en: "About the Community", ru: "О сообществе" },
+    "about.p1":        { en: "Turkmenistan\u2019s creative community brings together filmmakers, AI artists, educators, and innovators \u2014 united by creativity and a shared vision for the future.", ru: "Креативное сообщество Туркменистана объединяет кинематографистов, AI-художников, педагогов и новаторов \u2014 связанных творчеством и общим видением будущего." },
     "about.p2":        { en: "Our team spans filmmaking, AI-generated art, digital education, and creative agency work \u2014 united by a shared vision of expanding Turkmenistan\u2019s presence in the global creative economy.", ru: "Наша команда охватывает кинопроизводство, AI-искусство, цифровое образование и креативные агентства \u2014 объединённые общей целью расширить присутствие Туркменистана в мировой креативной экономике." },
     "about.p3":        { en: "From Studio22\u2019s cinematic productions to cutting-edge AI art, from TechWomen digital skills training to Jam Creative Agency\u2019s brand work, we represent the breadth and depth of Central Asian creativity.", ru: "От кинематографических проектов Studio22 до новейшего AI-искусства, от программ цифровой грамотности TechWomen до брендинга Jam Creative Agency \u2014 мы представляем всю широту и глубину центральноазиатского творчества." },
     "about.card1.title": { en: "Film & 3D", ru: "Кино и 3D" },
@@ -24,13 +24,14 @@ const I18N = {
     "about.card4.desc":  { en: "Branding, design, and creative strategy", ru: "Брендинг, дизайн и креативная стратегия" },
     "nav.heritage":    { en: "Heritage", ru: "Наследие" },
     "nav.programme":   { en: "Programme", ru: "Программа" },
+    "nav.gallery":     { en: "Gallery", ru: "Галерея" },
     "nav.resources":   { en: "Resources", ru: "Полезное" },
     "resources.title": { en: "Resources", ru: "Полезное" },
     "resources.back":  { en: "Back", ru: "Назад" },
     "heritage.title":  { en: "Our Creativity Is Older Than It Seems", ru: "Наше творчество старше, чем кажется" },
     "heritage.subtitle": { en: "Look at a Turkmen carpet \u2014 every line is a code, every color a meaning. We didn\u2019t learn design \u2014 we inherited it.", ru: "Посмотрите на туркменский ковёр \u2014 каждая линия \u2014 это код, каждый цвет \u2014 смысл. Мы не учились дизайну \u2014 мы его унаследовали." },
     "heritage.footer": { en: "We are heirs to a culture that always valued precision, beauty, and meaning. That\u2019s exactly what the creative economy needs.", ru: "Мы \u2014 наследники культуры, которая всегда ценила точность, красоту и смысл. Именно это нужно креативной экономике." },
-    "footer.text":     { en: "Creative Turkmenistan 2026 \u00b7 Creative Economy Forum \u00b7 Uzbekistan", ru: "Креативный Туркменистан 2026 \u00b7 Форум креативной экономики \u00b7 Узбекистан" },
+    "footer.text":     { en: "Creative Turkmenistan 2026 \u00b7 Ashgabat", ru: "Креативный Туркменистан 2026 \u00b7 Ашхабад" },
     "ui.portfolio":    { en: "Portfolio", ru: "Портфолио" },
     "ui.projects":     { en: "Projects", ru: "Проекты" },
     "page.title":      { en: "Creative Turkmenistan 2026", ru: "Креативный Туркменистан 2026" },
@@ -49,7 +50,7 @@ const I18N = {
     "stats.title":     { en: "In Numbers", ru: "В цифрах" },
     "stats.members":   { en: "Team Members", ru: "Участников" },
     "stats.disciplines": { en: "Creative Disciplines", ru: "Творческих дисциплин" },
-    "stats.countries":   { en: "Countries at CCA", ru: "Стран на CCA" },
+    "stats.countries":   { en: "Countries in Central Asia", ru: "Стран в Центральной Азии" },
     "stats.heritage":    { en: "Years of Creative Heritage", ru: "Лет творческого наследия" },
 
     // Programme / Events
@@ -59,9 +60,25 @@ const I18N = {
     "info.placeholder":   { en: "Describe your event idea...", ru: "Опишите вашу идею мероприятия..." },
     "info.send":          { en: "Send Proposal", ru: "Отправить предложение" },
 
+    // QR / Follow
+    "qr.label":        { en: "Follow us", ru: "Подпишитесь" },
+
+    // Partners
+    "partners.title":  { en: "Partners & Friends", ru: "Партнёры и друзья" },
+
+    // CTA / Join Us
+    "cta.title":       { en: "Join the Community", ru: "Присоединяйтесь" },
+    "cta.subtitle":    { en: "Follow us for events, opportunities, and creative collaborations", ru: "Следите за событиями, возможностями и творческими коллаборациями" },
+    "cta.instagram":   { en: "Instagram", ru: "Instagram" },
+    "cta.telegram":    { en: "Telegram", ru: "Telegram" },
+
+    // Gallery
+    "gallery.title":   { en: "Gallery", ru: "Галерея" },
+    "gallery.close":   { en: "Close", ru: "Закрыть" },
+
     // SVG Map
     "map.ashgabat":    { en: "Ashgabat", ru: "Ашхабад" },
-    "map.tashkent":    { en: "Tashkent / School 21", ru: "Ташкент / School 21" },
+    "map.tashkent":    { en: "Tashkent", ru: "Ташкент" },
     "map.dushanbe":    { en: "Dushanbe", ru: "Душанбе" }
   },
 
