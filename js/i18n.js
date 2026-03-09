@@ -247,8 +247,8 @@ const I18N = {
   events: [
     {
       id: "post-forum-gathering",
-      date: "2026-02-13",
-      label: { en: "Feb 13", ru: "13 фев" },
+      date: "2026-03-13",
+      label: { en: "Mar 13", ru: "13 мар" },
       title: { en: "Post Creative Central Asia Forum Gathering", ru: "Post Creative Central Asia Forum Gathering" },
       subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
       programme: [
