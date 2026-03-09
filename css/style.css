@@ -441,14 +441,22 @@ img { max-width: 100%; display: block; }
 
 /* QR Code in footer */
 .footer-qr { flex-shrink: 0; text-align: center; }
-.qr-link { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text3); transition: color .2s; }
-.qr-link:hover { color: var(--accent); }
-.qr-code {
-  width: 100px; height: 100px;
-  background: #fff; border-radius: 8px; padding: 6px;
-  color: #1a1a2e;
+.qr-link {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--text2); transition: color .2s, transform .2s;
 }
-.qr-label { font-size: .75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.qr-link:hover { color: var(--accent); transform: scale(1.05); }
+.qr-code {
+  width: 120px; height: 120px;
+  background: #fff; border-radius: 12px; padding: 8px;
+  box-shadow: 0 0 20px rgba(26,115,232,.3), 0 4px 12px rgba(0,0,0,.15);
+}
+.qr-label {
+  font-size: .8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 /* === Resources Panel === */
 .resources-overlay {
@@ -620,67 +628,49 @@ img { max-width: 100%; display: block; }
 /* === Programme Timeline === */
 .programme-section { background: var(--bg2); }
 
-/* === Event Tabs — 3D Cylinder Drum === */
+/* === Event Tabs — Flat Pill Strip === */
 .event-tabs {
-  perspective: 900px;
-  height: 100px; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 40px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 40px; overflow: hidden;
 }
-/* Fade masks on edges */
-.event-tabs::before, .event-tabs::after {
-  content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
-  pointer-events: none;
-}
-.event-tabs::before { left: 0; background: linear-gradient(to right, var(--bg2) 10%, transparent); }
-.event-tabs::after  { right: 0; background: linear-gradient(to left, var(--bg2) 10%, transparent); }
 
 .event-tabs-track {
-  transform-style: preserve-3d;
-  transition: transform .7s cubic-bezier(.25, .1, .25, 1);
-  position: relative;
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
 }
 
 .event-tab {
-  position: absolute;
-  /* centered via margin trick — no translate in the transform */
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; width: 140px; margin-left: -70px; margin-top: -28px;
-  backface-visibility: hidden;
+  display: inline-flex; align-items: center; gap: 6px;
   white-space: nowrap; cursor: pointer; user-select: none;
-  background: none; border: none; padding: 10px 8px;
-  font-family: inherit; font-size: 1.1rem; font-weight: 600;
+  background: none; border: 2px solid var(--text3); border-radius: 999px;
+  padding: 8px 20px;
+  font-family: inherit; font-size: .9rem; font-weight: 600;
   color: var(--text3); letter-spacing: .02em;
-  transition: color .3s ease, font-size .3s ease;
+  transition: color .3s ease, border-color .3s ease, background .3s ease;
 }
-.event-tab .tab-label {
-  display: block; font-size: .72rem; font-weight: 400; opacity: .55;
-  margin-top: 3px; letter-spacing: 0;
-}
-.event-tab:hover { color: var(--text2); }
+.event-tab:hover { color: var(--text); border-color: var(--text2); }
 
-/* Active face — the one pointing at the viewer */
+/* Active tab */
 .event-tab[data-active="1"] {
-  color: var(--text); font-size: 1.3rem;
-}
-.event-tab[data-active="1"] .tab-label { opacity: .85; font-size: .78rem; }
-/* Subtle tick mark under active — absolutely positioned so it doesn't shift layout */
-.event-tab::after {
-  content: ""; display: block; width: 24px; height: 2px; margin: 6px auto 0;
+  color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: 1px;
-  opacity: 0; transition: opacity .3s ease;
-}
-.event-tab[data-active="1"]::after {
-  opacity: 1;
+  border-color: transparent;
 }
 
 /* Event subtitle shown below tabs */
 .event-subtitle {
-  text-align: center; color: var(--text2); margin-bottom: 32px; font-size: .85rem;
-  min-height: 1.5em;
+  text-align: center; color: var(--text2); margin-bottom: 8px; font-size: .95rem;
+  font-weight: 600; min-height: 1.5em;
 }
-.event-subtitle a { color: var(--accent); text-decoration: none; }
-.event-subtitle a:hover { text-decoration: underline; }
+/* Venue line with location icon */
+.event-venue {
+  text-align: center; color: var(--text3); margin-bottom: 32px; font-size: .85rem;
+}
+.event-venue i { color: var(--accent); margin-right: 4px; }
+.venue-q {
+  font-weight: 700; color: var(--text2); font-style: italic;
+}
+.event-venue a { color: var(--accent); text-decoration: none; }
+.event-venue a:hover { text-decoration: underline; }
 
 /* === Tab Panels === */
 .tab-panels {
@@ -857,9 +847,8 @@ img { max-width: 100%; display: block; }
   /* Gallery mobile */
   .gallery-masonry { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 120px; }
   /* Event tabs mobile */
-  .event-tabs { perspective: 500px; height: 90px; }
-  .event-tabs::before, .event-tabs::after { width: 40px; }
-  .event-tab { width: 120px; margin-left: -60px; font-size: 1rem; }
+  .event-tabs-track { gap: 8px; }
+  .event-tab { font-size: .8rem; padding: 6px 14px; }
   .info-panel { padding: 28px 20px; }
 }
 

@@ -653,10 +653,8 @@ function toggleLang() {
   setLang(getLang() === "en" ? "ru" : "en");
 }
 
-// --- Events / Programme — 3D Cylinder Drum ---
+// --- Events / Programme — Flat Tabs ---
 let _activeEventIdx = 0;
-const _drumAngleStep = 30;  // degrees between items — smaller = more visible at once
-const _drumRadius = 380;    // px — large radius so items spread wide
 
 function renderEvents(lang) {
   const tabsEl = document.getElementById("event-tabs");
@@ -700,7 +698,7 @@ function renderEvents(lang) {
     tabsEl.appendChild(track);
   }
 
-  // Render items placed on cylinder surface
+  // Render tab buttons
   track.innerHTML = "";
   for (let i = 0; i < totalItems; i++) {
     const btn = document.createElement("button");
@@ -710,43 +708,29 @@ function renderEvents(lang) {
 
     if (i < events.length) {
       const ev = events[i];
-      btn.innerHTML = `${ev.label[lang] || ev.label.en}<span class="tab-label">${ev.title[lang] || ev.title.en}</span>`;
+      btn.textContent = ev.label[lang] || ev.label.en;
     } else {
       btn.innerHTML = `<i class="fas fa-envelope" style="font-size:.85em"></i> ${infoLabel}`;
     }
-
-    // Place on cylinder: rotateY then push out along Z axis
-    const angle = i * _drumAngleStep;
-    btn.style.transform = `rotateY(${angle}deg) translateZ(${_drumRadius}px)`;
 
     btn.addEventListener("click", () => {
       const idx = parseInt(btn.dataset.idx, 10);
       if (idx === _activeEventIdx) return;
       _activeEventIdx = idx;
-      spinDrum(getLang());
+      activateTab(getLang());
     });
 
     track.appendChild(btn);
   }
 
-  // Rotate track to center active item
-  spinDrum(lang, false);
+  // Set initial active state
+  activateTab(lang, false);
 }
 
-function spinDrum(lang, animate) {
+function activateTab(lang, animate) {
   const tabsEl = document.getElementById("event-tabs");
   const track = tabsEl ? tabsEl.querySelector(".event-tabs-track") : null;
   if (!track) return;
-
-  const rotation = -_activeEventIdx * _drumAngleStep;
-  if (animate === false) {
-    track.style.transition = "none";
-    track.style.transform = `rotateY(${rotation}deg)`;
-    track.offsetHeight; // force reflow
-    track.style.transition = "";
-  } else {
-    track.style.transform = `rotateY(${rotation}deg)`;
-  }
 
   // Update active data attribute
   track.querySelectorAll(".event-tab").forEach(btn => {
@@ -818,11 +802,15 @@ function buildPanelHTML(lang) {
 
   // Event panel
   const ev = events[_activeEventIdx];
-  const subtitle = `${ev.title[lang] || ev.title.en} &middot; ${ev.subtitle[lang] || ev.subtitle.en}`;
+  const whereLabel = lang === "ru" ? "Где?" : "Where?";
+  const venueHTML = ev.subtitle
+    ? `<p class="event-venue"><i class="fas fa-map-marker-alt"></i> <span class="venue-q">${whereLabel}</span> — ${ev.subtitle[lang] || ev.subtitle.en}</p>`
+    : "";
 
   if (ev.programme && ev.programme.length) {
     return `
-      <p class="event-subtitle">${subtitle}</p>
+      <p class="event-subtitle">${ev.title[lang] || ev.title.en}</p>
+      ${venueHTML}
       <div class="timeline">
         ${ev.programme.map(item => `
           <div class="tl-node reveal${item.highlight ? ' highlight' : ''}">
@@ -835,7 +823,8 @@ function buildPanelHTML(lang) {
 
   const tbd = lang === "ru" ? "Программа будет объявлена позже" : "Programme to be announced";
   return `
-    <p class="event-subtitle">${subtitle}</p>
+    <p class="event-subtitle">${ev.title[lang] || ev.title.en}</p>
+    ${venueHTML}
     <div class="programme-empty">${tbd}</div>`;
 }
 
@@ -1114,7 +1103,7 @@ window.addEventListener('hashchange', () => {
       : events.findIndex(e => e.date === slugToISO(parts[1]));
     if (idx === -1 || idx === _activeEventIdx) return;
     _activeEventIdx = idx;
-    spinDrum(getLang());
+    activateTab(getLang());
   }
   const target = document.getElementById(parts[0]);
   if (target) target.scrollIntoView({ behavior: 'smooth' });
