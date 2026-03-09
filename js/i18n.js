@@ -250,15 +250,15 @@ const I18N = {
       date: "2026-02-13",
       label: { en: "Feb 13", ru: "13 фев" },
       title: { en: "Post Creative Central Asia Forum Gathering", ru: "Post Creative Central Asia Forum Gathering" },
-      subtitle: { en: "With Jem Creative", ru: "С командой Jem Creative" },
+      subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
       programme: [
-        { time: "14:30", title: { en: "Creative Welcome — Registration & Networking with Jem Creative", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг с командой Jem Creative" }, highlight: false },
-        { time: "15:00", title: { en: "Opening Remarks — H.E. British Ambassador Stephen Conlon", ru: "Opening Remarks — Приветственное слово Его Превосходительства, Посла Великобритании Stephen Conlon" }, highlight: true },
-        { time: "15:10", title: { en: "Looking Back — Video of the Forum's Key Moments (by Aman)", ru: "Looking Back — Видео о двух днях подготовки и ключевых моментах форума (подготовлено Aman)" }, highlight: false },
-        { time: "15:15", title: { en: "Creative Central Asia Forum Digest — Muhhammed, Aleksandra, Mahri, Batyr & Selbi", ru: "Creative Central Asia Forum Digest — Короткий обзор форума от делегации: Muhhammed, Aleksandra, Mahri, Batyr & Selbi" }, highlight: false },
-        { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах Creative Turkmenistan" }, highlight: true },
-        { time: "16:00", title: { en: "Connecting Tashkent — Yulia Paramonova, MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с Yulia Paramonova, Course Leader of the MA in Creative Industries Management at WIUT" }, highlight: false },
-        { time: "16:15", title: { en: "Audience Vote & Reflections — Interactive Session with Batyr", ru: "Audience Vote & Reflections — Голосование и интерактивная часть с Batyr" }, highlight: false }
+        { time: "14:30", title: { en: "Creative Welcome — Registration & Networking", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг" }, highlight: false },
+        { time: "15:00", title: { en: "Opening Remarks", ru: "Opening Remarks — Приветственное слово" }, highlight: true },
+        { time: "15:10", title: { en: "Looking Back — Video of the Forum's Key Moments", ru: "Looking Back — Видео о ключевых моментах форума" }, highlight: false },
+        { time: "15:15", title: { en: "Creative Central Asia Forum Digest", ru: "Creative Central Asia Forum Digest — Короткий обзор форума от делегации" }, highlight: false },
+        { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах" }, highlight: true },
+        { time: "16:00", title: { en: "Connecting Tashkent — MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с WIUT" }, highlight: false },
+        { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактивная часть" }, highlight: false }
       ]
     },
     {
@@ -281,26 +281,7 @@ const I18N = {
         { time: "18:00", title: { en: "Closing", ru: "Закрытие" }, highlight: false }
       ]
     },
-    {
-      id: "march-meetup",
-      date: "2026-03-13",
-      label: { en: "Mar 13", ru: "13 мар" },
-      title: { en: "Iş Nokady — Post-Forum Meetup", ru: "Iş Nokady — Встреча после форума" },
-      subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
-      programme: [
-        { time: "16:30", title: { en: "Welcome & Networking Board", ru: "Встреча гостей и доска нетворкинга" }, highlight: false },
-        { time: "16:35", title: { en: "What Is the Creative Economy & Why It Matters", ru: "Что такое креативная экономика и зачем она нужна" }, highlight: false },
-        { time: "16:40", title: { en: "History of the Creative Economy Movement", ru: "История движения креативной экономики" }, highlight: false },
-        { time: "16:45", title: { en: "Iş Nokady: Mission, Goals & Team", ru: "Iş Nokady: Миссия, цели и команда" }, highlight: true },
-        { time: "16:55", title: { en: "Forum Digest: Networking, People & Contacts", ru: "Дайджест форума: Нетворкинг, люди и контакты" }, highlight: false },
-        { time: "17:00", title: { en: "Forum Digest: Events & Highlights", ru: "Дайджест форума: Ивенты и яркие моменты" }, highlight: false },
-        { time: "17:05", title: { en: "Forum Digest: Hackathon Experience", ru: "Дайджест форума: Опыт хакатона" }, highlight: false },
-        { time: "17:10", title: { en: "Forum Digest: Inspiration & Impressions", ru: "Дайджест форума: Вдохновение и впечатления" }, highlight: false },
-        { time: "17:15", title: { en: "Opportunities: Grants, Courses & Westminster Master's", ru: "Возможности: Гранты, курсы и магистратура Westminster" }, highlight: true },
-        { time: "17:20", title: { en: "Annual Events, Free Courses & CCA Telegram Channel", ru: "Ежегодные мероприятия, бесплатные курсы и Telegram-канал CCA" }, highlight: false },
-        { time: "17:25", title: { en: "Networking & Collaboration Board Results", ru: "Результаты доски нетворкинга и коллабораций" }, highlight: false }
-      ]
-    }
+    /* march-meetup removed — replaced by post-forum-gathering (Feb 13) */
   ],
 
   heritage: [
