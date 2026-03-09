@@ -246,6 +246,22 @@ const I18N = {
 
   events: [
     {
+      id: "post-forum-gathering",
+      date: "2026-02-13",
+      label: { en: "Feb 13", ru: "13 фев" },
+      title: { en: "Post Creative Central Asia Forum Gathering", ru: "Post Creative Central Asia Forum Gathering" },
+      subtitle: { en: "With Jem Creative", ru: "С командой Jem Creative" },
+      programme: [
+        { time: "14:30", title: { en: "Creative Welcome — Registration & Networking with Jem Creative", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг с командой Jem Creative" }, highlight: false },
+        { time: "15:00", title: { en: "Opening Remarks — H.E. British Ambassador Stephen Conlon", ru: "Opening Remarks — Приветственное слово Его Превосходительства, Посла Великобритании Stephen Conlon" }, highlight: true },
+        { time: "15:10", title: { en: "Looking Back — Video of the Forum's Key Moments (by Aman)", ru: "Looking Back — Видео о двух днях подготовки и ключевых моментах форума (подготовлено Aman)" }, highlight: false },
+        { time: "15:15", title: { en: "Creative Central Asia Forum Digest — Muhhammed, Aleksandra, Mahri, Batyr & Selbi", ru: "Creative Central Asia Forum Digest — Короткий обзор форума от делегации: Muhhammed, Aleksandra, Mahri, Batyr & Selbi" }, highlight: false },
+        { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах Creative Turkmenistan" }, highlight: true },
+        { time: "16:00", title: { en: "Connecting Tashkent — Yulia Paramonova, MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с Yulia Paramonova, Course Leader of the MA in Creative Industries Management at WIUT" }, highlight: false },
+        { time: "16:15", title: { en: "Audience Vote & Reflections — Interactive Session with Batyr", ru: "Audience Vote & Reflections — Голосование и интерактивная часть с Batyr" }, highlight: false }
+      ]
+    },
+    {
       id: "cca-2026",
       date: "2026-02-28",
       label: { en: "Feb 28", ru: "28 фев" },
