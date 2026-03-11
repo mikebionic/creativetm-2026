@@ -891,10 +891,16 @@ function buildPanelHTML(lang) {
 
   function splitAndAnimate() {
     const text = h1.textContent;
-    h1.innerHTML = text.split('').map((ch, i) => {
-      if (ch === ' ') return ' ';
-      return `<span class="letter" style="animation-delay:${i * 0.04}s">${ch}</span>`;
-    }).join('');
+    let ci = 0;
+    h1.innerHTML = text.split(' ').map(word => {
+      const letters = word.split('').map(ch => {
+        const s = `<span class="letter" style="animation-delay:${ci * 0.04}s">${ch}</span>`;
+        ci++;
+        return s;
+      }).join('');
+      ci++; // for the space
+      return `<span class="hero-word">${letters}</span>`;
+    }).join(' ');
 
     const totalLetterTime = text.length * 0.04 + 0.5;
     setTimeout(() => { if (label) label.classList.add('kinetic-visible'); }, 100);

@@ -752,24 +752,24 @@ img { max-width: 100%; display: block; }
   background: var(--accent2); box-shadow: 0 0 10px rgba(233,30,99,.4);
 }
 .tl-time {
-  font-weight: 700; font-size: .9rem;
+  font-weight: 700; font-size: 1.05rem;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.tl-title { color: var(--text); font-size: .82rem; margin-top: 2px; }
+.tl-title { color: var(--text); font-size: 1rem; margin-top: 2px; }
 .tl-node.highlight .tl-title { color: var(--accent2); font-weight: 600; }
 /* Language badge */
 .tl-lang {
-  display: inline-block; font-size: .6rem; font-weight: 700; letter-spacing: .04em;
-  padding: 1px 6px; border-radius: 4px; vertical-align: middle; margin-left: 6px;
+  display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .04em;
+  padding: 2px 7px; border-radius: 4px; vertical-align: middle; margin-left: 6px;
   line-height: 1.4;
 }
 .tl-lang-ru { background: rgba(26,115,232,.15); color: var(--accent); }
 .tl-lang-en { background: rgba(233,30,99,.15); color: var(--accent2); }
 /* Summary line */
 .tl-summary {
-  font-size: .75rem; color: var(--text3); margin-top: 3px; line-height: 1.4;
+  font-size: .88rem; color: var(--text3); margin-top: 3px; line-height: 1.4;
   font-style: italic;
 }
 /* Working language indicator */
@@ -875,6 +875,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .section { padding: 48px 0; }
   .hero h1 { font-size: 2rem; }
+  .hero-word { display: block; }
   .about-highlights { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .magtymguly-section { padding: 48px 16px; }
