@@ -273,12 +273,13 @@ const I18N = {
       subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
       programme: [
         { time: "14:30", title: { en: "Creative Welcome — Registration & Networking", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг" }, highlight: false },
-        { time: "15:00", title: { en: "Opening Remarks", ru: "Opening Remarks — Приветственное слово" }, highlight: true },
+        { time: "15:00", title: { en: "Opening Remarks", ru: "Opening Remarks — Приветственное слово" }, highlight: false },
         { time: "15:10", title: { en: "Looking Back — Video of the Forum's Key Moments", ru: "Looking Back — Видео о ключевых моментах форума" }, highlight: false },
         { time: "15:15", title: { en: "Creative Central Asia Forum Digest", ru: "Creative Central Asia Forum Digest — Короткий обзор форума от делегации" }, highlight: false },
         { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах" }, highlight: true },
         { time: "16:00", title: { en: "Connecting Tashkent — MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с WIUT" }, highlight: false },
-        { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактивная часть" }, highlight: false }
+        { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактивная часть" }, highlight: false },
+        { time: "16:30", title: { en: "Closing Remarks — UK Ambassador", ru: "Closing Remarks — Заключительное слово Посла Великобритании" }, highlight: true }
       ]
     }
   ],
