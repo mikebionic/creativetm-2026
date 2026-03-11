@@ -279,7 +279,7 @@ const I18N = {
         { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах" }, highlight: true },
         { time: "16:00", title: { en: "Connecting Tashkent — MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с WIUT" }, highlight: false },
         { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактивная часть" }, highlight: false },
-        { time: "16:30", title: { en: "Closing Remarks — UK Ambassador", ru: "Closing Remarks — Заключительное слово Посла Великобритании" }, highlight: true }
+        { time: "16:30", title: { en: "Closing Remarks — His Majesty's Ambassador Stephen Conlon", ru: "Closing Remarks — Посол Его Величества Стивен Конлон" }, highlight: true }
       ]
     }
   ],
