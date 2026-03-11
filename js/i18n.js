@@ -271,15 +271,16 @@ const I18N = {
       label: { en: "Mar 13", ru: "13 мар" },
       title: { en: "Post Creative Central Asia Forum Gathering", ru: "Post Creative Central Asia Forum Gathering" },
       subtitle: { en: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ashgabat <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>", ru: "<a href=\"https://www.ishnokady.com.tm/\" target=\"_blank\" rel=\"noopener\">Iş Nokady</a> коворкинг-центр, ТРЦ «Аркач», Ашхабад <a href=\"https://www.instagram.com/ish_nokady_/\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-instagram\"></i></a>" },
+      workingLang: { en: "Working language: Russian (Closing Remarks in English)", ru: "Рабочий язык: русский (Closing Remarks на английском)" },
       programme: [
-        { time: "14:30", title: { en: "Creative Welcome — Registration & Networking", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг" }, highlight: false },
-        { time: "15:00", title: { en: "Opening Remarks", ru: "Opening Remarks — Приветственное слово" }, highlight: false },
-        { time: "15:10", title: { en: "Looking Back — Video of the Forum's Key Moments", ru: "Looking Back — Видео о ключевых моментах форума" }, highlight: false },
-        { time: "15:15", title: { en: "Creative Central Asia Forum Digest", ru: "Creative Central Asia Forum Digest — Короткий обзор форума от делегации" }, highlight: false },
-        { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах" }, highlight: true },
-        { time: "16:00", title: { en: "Connecting Tashkent — MA Creative Industries Management, WIUT", ru: "Connecting Tashkent — Онлайн-включение с WIUT" }, highlight: false },
-        { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактивная часть" }, highlight: false },
-        { time: "16:30", title: { en: "Closing Remarks — His Majesty's Ambassador Stephen Conlon", ru: "Closing Remarks — Посол Его Величества Стивен Конлон" }, highlight: true }
+        { time: "14:30", title: { en: "Creative Welcome — Registration & Networking", ru: "Creative Welcome — Встреча гостей, регистрация и нетворкинг" }, summary: { en: "Registration & networking with the Jem Creative team", ru: "Встреча гостей, регистрация и нетворкинг с командой Jem Creative" }, lang: "RU", highlight: false },
+        { time: "15:00", title: { en: "Opening Remarks", ru: "Opening Remarks — Приветственное слово" }, summary: { en: "Welcome address from the organizers", ru: "Приветственное слово от организаторов" }, lang: "RU", highlight: false },
+        { time: "15:10", title: { en: "Looking Back — Forum Key Moments", ru: "Looking Back — Видео о ключевых моментах форума" }, summary: { en: "Video of two days of preparation and key forum moments", ru: "Видео о двух днях подготовки и ключевых моментах форума" }, lang: "RU", highlight: false },
+        { time: "15:15", title: { en: "Creative Central Asia Forum Digest", ru: "Creative Central Asia Forum Digest — Обзор форума от делегации" }, summary: { en: "Short forum digest by the delegation", ru: "Короткий обзор форума от делегации" }, lang: "RU", highlight: false },
+        { time: "15:45", title: { en: "Creative Turkmenistan — Vision, Goals & Plans", ru: "Creative Turkmenistan — Презентация о целях, видении и планах" }, summary: { en: "Presentation on Creative Turkmenistan's vision, goals & plans", ru: "Презентация о целях, видении и планах Creative Turkmenistan" }, lang: "RU", highlight: true },
+        { time: "16:00", title: { en: "Connecting Tashkent", ru: "Connecting Tashkent — Онлайн-включение" }, summary: { en: "Online session with the Course Leader of MA Creative Industries Management, WIUT", ru: "Онлайн-включение с Course Leader of the MA in Creative Industries Management at WIUT" }, lang: "RU", highlight: false },
+        { time: "16:15", title: { en: "Audience Vote & Reflections", ru: "Audience Vote & Reflections — Голосование и интерактив" }, summary: { en: "Interactive voting and reflections", ru: "Голосование и интерактивная часть" }, lang: "RU", highlight: false },
+        { time: "16:30", title: { en: "Closing Remarks — His Majesty's Ambassador Stephen Conlon", ru: "Closing Remarks — Посол Его Величества Стивен Конлон" }, summary: { en: "Closing address by His Majesty's Ambassador to Turkmenistan", ru: "Заключительное слово Посла Его Величества в Туркменистане" }, lang: "EN", highlight: true }
       ]
     }
   ],

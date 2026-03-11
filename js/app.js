@@ -808,16 +808,24 @@ function buildPanelHTML(lang) {
     : "";
 
   if (ev.programme && ev.programme.length) {
+    const workingLangHTML = ev.workingLang
+      ? `<p class="event-working-lang"><i class="fas fa-language"></i> ${ev.workingLang[lang] || ev.workingLang.en}</p>`
+      : "";
     return `
       <p class="event-subtitle">${ev.title[lang] || ev.title.en}</p>
       ${venueHTML}
+      ${workingLangHTML}
       <div class="timeline">
-        ${ev.programme.map(item => `
+        ${ev.programme.map(item => {
+          const langBadge = item.lang ? `<span class="tl-lang tl-lang-${item.lang.toLowerCase()}">${item.lang}</span>` : "";
+          const summaryText = item.summary ? `<div class="tl-summary">${item.summary[lang] || item.summary.en}</div>` : "";
+          return `
           <div class="tl-node reveal${item.highlight ? ' highlight' : ''}">
-            <div class="tl-time">${item.time}</div>
+            <div class="tl-time">${item.time} ${langBadge}</div>
             <div class="tl-title">${item.title[lang] || item.title.en}</div>
-          </div>
-        `).join("")}
+            ${summaryText}
+          </div>`;
+        }).join("")}
       </div>`;
   }
 
